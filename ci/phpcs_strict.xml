@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="OpenEMR Standard">
+<ruleset name="HMS Standard">
   <description>PSR2</description>
   <arg name="tab-width" value="4" />
   <!-- PHP code MUST use only UTF-8 without BOM. -->

@@ -110,7 +110,7 @@
  *
  */
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with HMS:
 require_once(dirname(__FILE__) . "/common/compatibility/Checker.php");
 
 use OpenEMR\Common\Checker;

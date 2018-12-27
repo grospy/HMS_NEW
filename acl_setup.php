@@ -1,26 +1,5 @@
 <?php
-/**
- * This program is run by the OpenEMR setup.php script to install phpGACL
- * and creates the Access Control Objects and their sections.
- * See openemr/library/acl.inc file for the list of
- * currently supported Access Control Objects(ACO), which this
- * script will install.  This script also creates several
- * ARO groups, an "admin" ARO, and some reasonable ACL entries for
- * the groups.
- *   ARO groups include:
- *      Administrators
- *      Physicians     (Doctors)
- *      Clinicians     (Nurses, Physician Assistants, etc.)
- *      Front Office   (Receptionist)
- *      Accounting
- *
- * Upgrade Howto
- * When upgrading to a new version of OpenEMR, run the acl_upgrade.php
- * script to update the phpGACL access controls.  This is required to
- * ensure the database includes all the required Access Control
- * Objects(ACO).
- *
- */
+
 
 require_once(dirname(__FILE__).'/library/acl.inc');
 
@@ -35,7 +14,7 @@ $gacl = new gacl_api();
 // Create the ACO sections.  Every ACO must have a section.
 //
 if ($gacl->add_object_section('Accounting', 'acct', 10, 0, 'ACO') === false) {
-    echo "Unable to create the access controls for OpenEMR.  You have likely already run this script (acl_setup.php) successfully.<br>Other possible problems include php-GACL configuration file errors (gacl.ini.php or gacl.class.php).<br>";
+    echo "Unable to create the access controls for HMS.  You have likely already run this script (acl_setup.php) successfully.<br>Other possible problems include php-GACL configuration file errors (gacl.ini.php or gacl.class.php).<br>";
     return;
 }
 // xl('Accounting')
@@ -213,8 +192,8 @@ $gacl->add_object('nationnotes', 'Nation Notes Configure', 'nn_configure', 10, 0
 
 // Create ARO groups.
 //
-$users = $gacl->add_group('users', 'OpenEMR Users', 0, 'ARO');
-// xl('OpenEMR Users')
+$users = $gacl->add_group('users', 'HMS Users', 0, 'ARO');
+// xl('HMS Users')
 $admin = $gacl->add_group('admin', 'Administrators', $users, 'ARO');
 // xl('Administrators')
 $clin  = $gacl->add_group('clin', 'Clinicians', $users, 'ARO');
@@ -236,7 +215,7 @@ $gacl->add_object_section('Users', 'users', 10, 0, 'ARO');
 
 // Create the Administrator in the above-created "users" section
 // and add him/her to the above-created "admin" group.
-// If this script is being used by OpenEMR's setup, then will
+// If this script is being used by HMS's setup, then will
 //   incorporate the installation values. Otherwise will
 //    hardcode the 'admin' user.
 if (isset($this) && isset($this->iuser)) {
@@ -556,11 +535,11 @@ $gacl->add_acl(
 ?>
 <html>
 <head>
-<title>OpenEMR ACL Setup</title>
+<title>HMS ACL Setup</title>
 <link rel=STYLESHEET href="interface/themes/style_blue.css">
 </head>
 <body>
-<b>OpenEMR ACL Setup</b>
+<b>HMS ACL Setup</b>
 <br>
 All done configuring and installing access controls (php-GACL)!
 </body>

@@ -1,8 +1,8 @@
 {
-  "name": "openemr",
-  "homepage": "http://www.open-emr.org",
+  "name": "hms",
+  "homepage": "http://heartguard.com",
   "authors": [
-    "OpenEMR"
+    "HMS"
   ],
   "description": "",
   "main": "",

@@ -1,7 +1,7 @@
 {
     "name": "ccdaservice",
     "version": "5.0.1",
-    "description": "OpenEMR ccda templating generator service",
+    "description": "HMS ccda templating generator service",
     "main": "serveccda.js",
     "scripts": {},
     "repository": {
@@ -10,7 +10,7 @@
     },
     "keywords": [
         "node.js",
-        "OpenEMR",
+        "HMS",
         "CCDA"
     ],
     "author": "sjpadgett@gmail.com",

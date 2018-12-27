@@ -1,7 +1,7 @@
 <?php
 
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with HMS:
 require_once(dirname(__FILE__) . "/common/compatibility/Checker.php");
 
 use OpenEMR\Common\Checker;
@@ -15,7 +15,7 @@ require_once "version.php";
 
 // Please note that the plain sql is used over the Doctrine ORM for
 // `version` table interactions because it cannot connect due to a
-// lack of context (this code is ran outside of the OpenEMR context).
+// lack of context (this code is ran outside of the HMS context).
 
 $webserver_root = dirname(__FILE__);
 if (stripos(PHP_OS, 'WIN') === 0) {
@@ -32,7 +32,7 @@ function sqlQuery($statement, $link)
 ?>
 <html>
 <head>
-<title>OpenEMR Site Administration</title>
+<title>HMS Site Administration</title>
 <link rel='STYLESHEET' href='interface/themes/style_sky_blue.css'>
 <style>
 tr.head   { font-size:10pt; background-color:#cccccc; text-align:center; font-weight:bold; }
@@ -42,7 +42,7 @@ a, a:visited, a:hover { color:#0000cc; text-decoration:none; }
 </head>
 <body>
 <center>
-<p><span class='title'>OpenEMR Site Administration</span></p>
+<p><span class='title'>HMS Site Administration</span></p>
 <table width='100%' cellpadding='1' cellspacing='2'>
  <tr class='head'>
   <td>Site ID</td>

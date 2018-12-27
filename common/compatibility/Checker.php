@@ -3,7 +3,7 @@
 namespace OpenEMR\Common;
 
 /**
- * Check if the server's PHP version is compatible with OpenEMR.
+ * Check if the server's PHP version is compatible with HMS.
  *
  */
 class Checker

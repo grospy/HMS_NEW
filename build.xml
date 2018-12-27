@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="OpenEMR"
-         description="OpenEMR is a Free and Open Source electronic health records and medical practice management application"
+<project name="HMS"
+         description="HMS is a Free and Open Source electronic health records and medical practice management application"
          default="dist" basedir=".">
 
     <property name="dir.src" value="${project.basedir}"/>
