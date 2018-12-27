@@ -1,31 +1,5 @@
 <?php
-/**
- * This report cross-references appointments with encounters.
- * For a given date, show a line for each appointment with the
- * matching encounter, and also for each encounter that has no
- * matching appointment.  This helps to catch these errors:
- *
- * * Appointments with no encounter
- * * Encounters with no appointment
- * * Codes not justified
- * * Codes not authorized
- * * Procedure codes without a fee
- * * Fees assigned to diagnoses (instead of procedures)
- * * Encounters not billed
- *
- * For decent performance the following indexes are highly recommended:
- *   openemr_postcalendar_events.pc_eventDate
- *   forms.encounter
- *   billing.pid_encounter
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2005-2016 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

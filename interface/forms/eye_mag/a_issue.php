@@ -1,20 +1,5 @@
 <?php
-/**
- * This file presents the PMSFH control panel.
- * It uses ajax/javascript to add, delete or edit an issue.
- *
- * Originally culled from /interface/patient_file/summary and adapted...
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Ray Magauran <magauran@MedFetch.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2005-2011 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2015-2016 Ray Magauran <magauran@MedFetch.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 $form_folder= "eye_mag";
 require_once('../../globals.php');

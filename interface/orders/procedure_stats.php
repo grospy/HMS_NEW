@@ -1,18 +1,5 @@
 <?php
-/**
- * This module creates statistical reports related to lab tests and
- * other procedure orders.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Roberto Vasquez <robertogagliotta@gmail.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2010-2016 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2015 Roberto Vasquez <robertogagliotta@gmail.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

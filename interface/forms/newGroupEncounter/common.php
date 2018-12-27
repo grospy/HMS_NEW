@@ -1,16 +1,5 @@
 <?php
-/**
- * Common script for the encounter form (new and view) scripts for therapy groups.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Amiel Elboim <amielel@matrix.co.il>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2016 Shachar Zilbershlag <shaharzi@matrix.co.il>
- * @copyright Copyright (c) 2016 Amiel Elboim <amielel@matrix.co.il>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 require_once("$srcdir/options.inc.php");
 require_once("$srcdir/api.inc");

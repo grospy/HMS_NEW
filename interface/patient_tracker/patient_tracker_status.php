@@ -1,18 +1,5 @@
 <?php
-/**
- * Patient Tracker Status Editor
- *
- * This allows entry and editing of current status for the patient from within patient tracker and updates the status on the calendar.
- * Contains a drop down for the Room information driven by the list Patient Flow Board Rooms.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Terry Hill <terry@lillysystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2015 Terry Hill <terry@lillysystems.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
  
 require_once("../globals.php");

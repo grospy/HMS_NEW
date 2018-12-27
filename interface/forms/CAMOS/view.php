@@ -1,25 +1,5 @@
 <?php
-/**
- * CAMOS view.php
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    markleeds <markleeds>
- * @author    fndtn357 <fndtn357@gmail.com>
- * @author    cornfeed <jdough823@gmail.com>
- * @author    cfapress <cfapress>
- * @author    Wakie87 <scott@npclinics.com.au>
- * @author    Robert Down <robertdown@live.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2008 cfapress <cfapress>
- * @copyright Copyright (c) 2009 markleeds <markleeds>
- * @copyright Copyright (c) 2011 cornfeed <jdough823@gmail.com>
- * @copyright Copyright (c) 2012 fndtn357 <fndtn357@gmail.com>
- * @copyright Copyright (c) 2016 Wakie87 <scott@npclinics.com.au>
- * @copyright Copyright (c) 2016-2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2017 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 ?>

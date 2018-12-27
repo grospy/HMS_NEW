@@ -1,17 +1,5 @@
 <?php
-/**
- * Review of Systems Checks form
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    cfapress <cfapress>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Robert Down <robertdown@live.com>
- * @copyright Copyright (c) 2008 cfapress <cfapress>
- * @copyright Copyright (c) 2016-2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2017 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../../globals.php");
