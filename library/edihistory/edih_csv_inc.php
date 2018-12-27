@@ -720,21 +720,7 @@ function csv_file_type($type, $gs_code = false)
 }
 
 
-/**
- * The array that holds the various parameters used in dealing with files
- *
- * A key function since it holds the paths, columns, etc.
- * Unfortunately, there is an issue with matching the type in  * the case of the
- * values '997', '277', '999', etc, becasue these strings may be recast
- * from strings to integers, so the 'type' originally supplied is lost.
- * This introduces an inconsistency when the 'type' is used in comparison tests.
- * We call the csv_file_type() function to return a usable file type identifier.
- * The 'datecolumn' and 'fncolumn' entries are used in csv_to_html() to filter by date
- * or place links to files.
- *
- * @param string $type -- default = ALL or one of batch, ibr, ebr, dpr, f997, f277, era, ack, text
- * @return array
- */
+
 function csv_parameters($type = 'ALL')
 {
     //
