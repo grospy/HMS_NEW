@@ -1,0 +1,47 @@
+
+
+div.code-choices
+{
+    font-size: 10pt;
+    position:relative;
+    z-index: 0;
+}
+div.category-display
+{
+    float:left;
+    width: 33%;
+    cursor: pointer;
+}
+
+div.category-display > button
+{
+    width: 25em;
+    font-weight: bold;
+    text-align: left;
+}
+
+div.category-display > button:hover
+{
+    color: blue;
+}
+.active-category
+{
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    width: 99%;
+    border: 1px black solid;
+    padding: 4pt;
+}
+
+div.code-choice
+{
+    float:left;
+    width: 33%;
+    cursor: pointer;
+    text-align: left;
+}
+
+div.code-choice:hover{
+    background-color: yellow;
+}
