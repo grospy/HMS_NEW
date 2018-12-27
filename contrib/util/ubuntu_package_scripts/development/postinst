@@ -11,9 +11,9 @@
 #
 # Debian package post installation script steps:
 #  1) Collect mysql root password (optional)
-#  2) Download OpenEMR from official github repository
-#  3) Install OpenEMR
-#  4) Configure OpenEMR (if applicable)
+#  2) Download HMS from official github repository
+#  3) Install HMS
+#  4) Configure HMS (if applicable)
 #
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>

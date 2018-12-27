@@ -1,5 +1,5 @@
 #!/bin/bash
-# backups an openemr system and burns a cd
+# backups an HMS system and burns a cd
 
 #vars
 

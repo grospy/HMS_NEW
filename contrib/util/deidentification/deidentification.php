@@ -1,6 +1,6 @@
 <?php
 
-/*   This script is for de-identifying an OpenEMR database for the purpose of creating a live demo or for
+/*   This script is for de-identifying an HMS database for the purpose of creating a live demo or for
     development using real data but keepinng patient identities a secret.  The script does the following
 
         * removing patient information from the patient_data table and replacing patient demographics with a randomly generated name
@@ -15,7 +15,7 @@
 	To use: 
 	
 	1) Enter values for host, user, database, password
-	2) type: php deidentification_OpenEMR.php 
+	2) type: php deidentification_HMS.php 
 	
 	Your database now has deidientified all data and can never be restored. 
 

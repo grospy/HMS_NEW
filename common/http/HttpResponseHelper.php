@@ -4,7 +4,7 @@
  *
  */
 
-namespace OpenEMR\Common\Http;
+namespace HMS\Common\Http;
 
 class HttpResponseHelper
 {
