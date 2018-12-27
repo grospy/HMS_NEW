@@ -130,12 +130,12 @@ closedir($dh);
 ?>
 <html>
 <head>
-<title><?php xl('OpenEMR Database Upgrade', 'e'); ?></title>
+<title><?php xl('HMS Database Upgrade', 'e'); ?></title>
 <link rel='STYLESHEET' href='../../interface/themes/style_sky_blue.css'>
 </head>
 <body> <br>
 <center>
-<span class='title'><?php xl('OpenEMR Database Upgrade for De-identification', 'e'); ?></span>
+<span class='title'><?php xl('HMS Database Upgrade for De-identification', 'e'); ?></span>
 <br>
 </center>
 <?php

@@ -1,25 +1,5 @@
 <?php
-/**
- * Application logger. Puts daily logs in the server's temporary directory. Log level is set in
- * globals as $GLOBALS["log_level"] (this is customizable in the globals file).
 
- * A *nix user can run the following command to see the logs:
- * <code>
- *     > tail -f /var/www/openemr/logs/2016_11_24_application.log
- *     2016-11-24 20:15:07 [TRACE] \common\database\Connector - Connecting with pooled mode
- *     2016-11-24 20:15:07 [TRACE] \common\database\Connector - Wiring up Doctrine entities
- *     2016-11-24 20:15:07 [TRACE] \common\database\Connector - Creating connection
- *     2016-11-24 20:15:07 [INFO] \some\other\Class - Some info message
- *     2016-11-24 20:18:01 [WARN] \some\other\Class - Some field is missing
- * </code>
- *
- * @note Error level logs will also be sent to Apache error log.
- *
- * @note Application logging is sparse at the moment (will be introduced w/ the modernization project).
- *
- * Copyright (C) 2016 Matthew Vita <matthewvita48@gmail.com>
- *
- */
 
 namespace OpenEMR\Common\Logging;
 
