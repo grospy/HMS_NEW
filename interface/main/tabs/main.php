@@ -179,7 +179,7 @@ if (isset($_SESSION['app1'])) {
 <div id="mainBox" <?php echo $disp_mainBox ?>>
     <div id="dialogDiv"></div>
     <div class="body_top">
-        <a href="http://www.shamilkarimli.tk" title="OpenEMR <?php echo xla("Website"); ?>" target="_blank"><img class="logo" alt="openEMR small logo"  border="0" src="<?php echo $GLOBALS['images_static_relative']; ?>/menu-logo.png"></a>
+        <a href="http://www.shamilkarimli.tk" title="HMS <?php echo xla("Website"); ?>" target="_blank"><img class="logo" alt="HMS small logo"  border="0" src="<?php echo $GLOBALS['images_static_relative']; ?>/menu-logo.png"></a>
         <span id="menu logo" data-bind="template: {name: 'menu-template', data: application_data} "></span>
         <span id="userData" data-bind="template: {name: 'user-data-template', data:application_data} "></span>
     </div>
