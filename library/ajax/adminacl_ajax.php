@@ -1,17 +1,5 @@
 <?php
-/**
- * This file contains functions that service ajax requests for
- * ACL(php-gacl) administration within OpenEMR. All returns are
- * done via xml.
- *
- *  Important - Ensure that display_errors=Off in php.ini settings.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2007-2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 require_once("../../interface/globals.php");
 require_once("$srcdir/acl.inc");
