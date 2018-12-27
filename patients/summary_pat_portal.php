@@ -1,15 +1,5 @@
 <?php
-/**
- * summary_pat_portal
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Cassian LUP <cassi.lup@gmail.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2011 Cassian LUP <cassi.lup@gmail.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 //continue session
 session_start();

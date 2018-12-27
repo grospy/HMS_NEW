@@ -1,18 +1,5 @@
 <?php
-/**
- *  Daily Summary Report. (/interface/reports/daily_summary_report.php)
- *
- *  This report shows date wise numbers of the Appointments Scheduled,
- *  New Patients, Visited patients, Total Charges, Total Co-pay and Balance amount for the selected facility & providers wise.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rishabh Software
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2016 Rishabh Software
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

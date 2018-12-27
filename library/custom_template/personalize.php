@@ -1,16 +1,5 @@
 <?php
-/**
- * personalize.php
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Eldho Chacko <eldho@zhservices.com>
- * @author    Jacob T Paul <jacob@zhservices.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../../interface/globals.php");

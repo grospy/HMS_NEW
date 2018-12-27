@@ -1,19 +1,4 @@
 <?php
-/**
- *
- * Modified from interface/main/calendar/add_edit_event.php for
- * the patient portal.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (C) 2005-2006 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (C) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
 
 // continue session
 session_start();

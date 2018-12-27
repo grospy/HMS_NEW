@@ -1,21 +1,5 @@
 <?php
-/**
- * This report lists non reported patient diagnoses for a given date range.
- * Ensoftek: Jul-2015: Modified HL7 generation to 2.5.1 spec and MU2 compliant.
- * This implementation is only for the A01 profile which will suffice for MU2 certification.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Tomasz Wyderka <wyderkat@cofoh.com>
- * @author    Ensoftek <rammohan@ensoftek.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2008 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2010 Tomasz Wyderka <wyderkat@cofoh.com>
- * @copyright Copyright (c) 2015 Ensoftek <rammohan@ensoftek.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

@@ -1,21 +1,5 @@
 <?php
-/**
- * Clinical Decision Rules(CDR) engine functions.
- *
- * These functions should not ever attempt to write to
- * session variables, because the session_write_close() function
- * is typically called before utilizing these functions.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Medical Information Integration, LLC
- * @author    Ensofttek, LLC
- * @copyright Copyright (c) 2010-2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2011 Medical Information Integration, LLC
- * @copyright Copyright (c) 2011 Ensofttek, LLC
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once(dirname(__FILE__) . "/patient.inc");

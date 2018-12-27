@@ -1,19 +1,5 @@
 <?php
-/**
- * main file for the 270 batch creation.
- * This report is the batch report required for batch eligibility verification.
- *
- * This program creates the batch for the x12 270 eligibility file
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Terry Hill <terry@lilysystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2010 MMF Systems, Inc
- * @copyright Copyright (c) 2016 Terry Hill <terry@lillysystems.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

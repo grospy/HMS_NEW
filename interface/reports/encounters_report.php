@@ -1,20 +1,5 @@
 <?php
-/**
- *  Encounters report.
- *
- *  This report shows past encounters with filtering and sorting,
- *  Added filtering to show encounters not e-signed, encounters e-signed and forms e-signed.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Terry Hill <terry@lilysystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2007-2016 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2015 Terry Hill <terry@lillysystems.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");
