@@ -1,32 +1,6 @@
 <?php
 /* $Id$ */
-// Copyright (C) 2008-2014, 2016 Rod Roark <rod@sunsetsystems.com>
-// Adapted for cross-platform operation by Bill Cernansky (www.mi-squared.com)
-//
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// as published by the Free Software Foundation; either version 2
-// of the License, or (at your option) any later version.
 
-// This script creates a backup tarball and sends it to the users's
-// browser for download.  The tarball includes:
-//
-// * an OpenEMR database dump (gzipped)
-// * a phpGACL database dump (gzipped), if phpGACL is used and has
-//   its own database
-// * the OpenEMR web directory (.tar.gz)
-// * the phpGACL web directory (.tar.gz), if phpGACL is used
-//
-// The OpenEMR web directory is important because it includes config-
-// uration files, patient documents, and possible customizations, and
-// also because the database structure is dependent on the installed
-// OpenEMR version.
-//
-// This script depends on execution of some external programs:
-// mysqldump & pg_dump.  It has been tested with Debian and Ubuntu
-// Linux and with Windows XP.
-// Do not assume that it works for you until you have successfully
-// tested a restore!
 set_time_limit(0);
 require_once("../globals.php");
 require_once("$srcdir/acl.inc");

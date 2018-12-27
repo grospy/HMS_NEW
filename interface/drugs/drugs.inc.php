@@ -1,16 +1,5 @@
 <?php
-// Copyright (C) 2006-2016 Rod Roark <rod@sunsetsystems.com>
-//
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// as published by the Free Software Foundation; either version 2
-// of the License, or (at your option) any later version.
-//
-// Modified 7-2009 by BM in order to migrate using the form,
-// unit, route, and interval lists with the
-// functions in openemr/library/options.inc.php .
-// These lists are based on the constants found in the 
-// openemr/library/classes/Prescription.class.php file.
+
 
 // Decision was made in June 2013 that a sale line item in the Fee Sheet may
 // come only from the specified warehouse. Set this to false if the decision

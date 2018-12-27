@@ -227,12 +227,7 @@ if (! $trans_id) {
                 $form_deposit_date,
                 $form_pay_total
             );
-              // The sl_eob_search page needs its invoice links modified to invoke
-              // javascript to load form parms for all the above and submit.
-              // At the same time that page would be modified to work off the
-              // openemr database exclusively.
-              // And back to the sl_eob_invoice page, I think we may want to move
-              // the source input fields from row level to header level.
+
 
               // Handle deletes. row_delete() is borrowed from deleter.php.
             if ($ALLOW_DELETE && !$debug) {
