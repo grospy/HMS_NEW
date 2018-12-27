@@ -1,22 +1,5 @@
 <?php
-/**
- * This is a report of Financial Summary by Service Code.
- *
- * This is a summary of service code charge/pay/adjust and balance,
- * with the ability to pick "important" codes to either highlight or
- * limit to list to. Important codes can be configured in
- * Administration->Service section by assigning code with
- * 'Service Reporting'.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Visolve
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (C) 2006-2016 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");
