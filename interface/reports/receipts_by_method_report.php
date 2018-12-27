@@ -1,22 +1,5 @@
 <?php
-/**
- * This is a report of receipts by payer or payment method.
- *
- * The payer option means an insurance company name or "Patient".
- *
- * The payment method option is most useful for sites using
- * pos_checkout.php (e.g. weight loss clinics) because this plugs
- * a payment method like Cash, Check, VISA, etc. into the "source"
- * column of the SQL-Ledger acc_trans table or ar_session table.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2006-2016 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

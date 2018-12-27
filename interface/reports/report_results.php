@@ -1,14 +1,5 @@
 <?php
-/**
- * Generic script to list stored reports. Part of the module to allow the tracking,
- * storing, and viewing of reports.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2012-2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");

@@ -1,17 +1,5 @@
 <?php
-/**
- * This is a report to create a patient ledger of charges with payments
- * applied.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    WMT
- * @author    Terry Hill <terry@lillysystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2015 Rich Genandt <rgenandt@gmail.com>
- * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 require_once('../globals.php');
 require_once($GLOBALS['srcdir'].'/patient.inc');

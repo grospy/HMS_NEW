@@ -1,18 +1,5 @@
 <?php
-/**
- *  Patient Flow Board (Patient Tracker) (Report Based on the appointment report)
- *
- *  This program used to select and print the information captured in the Patient Flow Board program ,
- *  allowing the user to select and print the desired information.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Terry Hill <terry@lilysystems.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2015 Terry Hill <terry@lillysystems.com>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 
 require_once("../globals.php");
