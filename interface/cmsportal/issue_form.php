@@ -153,7 +153,7 @@ if ($form_type) {
     $result['fields']['type'] = $form_type;
 }
 
-// Look up the patient in OpenEMR.
+// Look up the patient in HMS.
 $ptid = lookup_openemr_patient($result['post']['user']);
 ?>
 <html>

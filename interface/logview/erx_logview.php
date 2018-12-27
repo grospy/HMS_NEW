@@ -1,18 +1,5 @@
 <?php
-/**
- * interface/logview/erx_logview.php Display NewCrop errors.
- *
- * @package    OpenEMR
- * @subpackage NewCrop
- * @link       http://www.open-emr.org
- * @author     Eldho Chacko <eldho@zhservices.com>
- * @author     Vinish K <vinish@zhservices.com>
- * @author     Sam Likins <sam.likins@wsi-services.com>
- * @author     Brady Miller <brady.g.miller@gmail.com>
- * @copyright  Copyright (c) 2011 ZMG LLC <sam@zhservices.com>
- * @copyright  Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 require_once(__DIR__.'/../globals.php');
 require_once($srcdir.'/log.inc');

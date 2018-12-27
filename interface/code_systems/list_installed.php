@@ -1,7 +1,7 @@
 <?php
 /**
  * This file implements the main jquery interface for loading external
- * database files into openEMR
+ * database files into HMS
  *
  */
 

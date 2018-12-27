@@ -274,7 +274,7 @@ while ($lorow = sqlFetchArray($lores)) {
 $field_id = 'cmsportal_login';
 if (empty($ptrow[$field_id])) {
     if ($result['post']['user'] !== '') {
-        // Registered in portal but still need to record that in openemr.
+        // Registered in portal but still need to record that in HMS.
         echo "</table>\n";
         echo "<input type='hidden' name='form_$field_id' value='" . attr($result['post']['user']) . "' />\n";
     } else {
@@ -293,7 +293,7 @@ if (empty($ptrow[$field_id])) {
         echo "</table>\n";
     }
 } else {
-  // Portal login name is already in openemr.
+  // Portal login name is already in HMS.
     echo "</table>\n";
 }
 ?>

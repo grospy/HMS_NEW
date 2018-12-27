@@ -57,4 +57,4 @@ foreach ($pid_list as $pid) {
 }
 $pdf->Output('postcards.pdf', 'D');
 //D forces the file download instead of showing it in browser
-//isn't there an openEMR global for this?
+//isn't there an HMS global for this?

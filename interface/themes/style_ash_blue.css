@@ -921,7 +921,7 @@ div.notab-right {
 }
 #report_parameters>table>tbody>tr>td>table {
     border-left: 1px solid #404A6D !Important;
-    /*openemr5*/
+    /*hms*/
 }
 #report_parameters .form-control {
     width: auto;
@@ -1347,7 +1347,7 @@ div.section, div.borderbox {
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~search div ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5login*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5login*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .login div.container {
     margin-top: 5%;
     max-width: 500px;
@@ -1360,18 +1360,18 @@ div.section, div.borderbox {
 body.login {
     background: #fcfcfc ! Important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5login*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5login*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5fee-sheet*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5fee-sheet*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .feesheet-title {
     font-weight: 900;
     background: #6B7CB6 !important;
     margin: 0px 0px 10px 0px;
     padding: 3px;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5fee-sheet*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5fee-sheet*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~openemr5_tabs-Full~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~hms5_tabs-Full~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #mainBox > .body_top, .body_top_tabs {
     background-color: #6B7CB6 !important;
 }
@@ -1468,16 +1468,16 @@ body.login {
 .body_title,  .body_title_tabs {
     background-color: #A6B0D3 !important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5tabs body*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5tabs body*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .tabs_body, #searchCriteria {
     background-color: #B5BDDA;
 }
 .tabs_body_light {
     background-color: #C3CAE1;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5tabs body*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5tabs body*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5tabs calendar*~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5tabs calendar*~~~~~~~~~~~~~~~~~~~~~~~*/
 #calsearch_params {
     background-color: #C3CAE1 !important;
     width: 98% !Important;
@@ -1501,13 +1501,13 @@ div#providerPicker select {
 #topToolbarRight {
     padding: 3px;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5tabs calendar*~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5tabs calendar*~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 calendar icon*~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 calendar icon*~~~~~~~~~~~~~~~~~~~~~~*/
 img[src *="show_calendar.gif"] {
     margin-bottom: 3px;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 calendar icon*~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 calendar icon*~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Form styles */
 
@@ -1722,7 +1722,7 @@ table.dataTable#therapy_groups_list tbody td {
 #file_type_whitelist .top-list {
     margin: 20px 20px 2px 20px;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 external data*~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 external data*~~~~~~~~~~~~~~~~~~~~~~*/
 .dm-ed-in-1 {
     background-color: #C3CAE1 !Important;
     border-bottom: thin solid #404A6D !Important;
@@ -1736,9 +1736,9 @@ ul.ext-tab-head li.child-active {
 .dm-ed-in-6 {
     padding-left: 5px;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 external data*~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 external data*~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 ros~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 ros~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .responsetd {
     border-color: #404A6D !important;
     background-color: #C3CAE1;
@@ -1750,9 +1750,9 @@ ul.ext-tab-head li.child-active {
     background-color: #F0F1F7;
     border-color: #404A6D !important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 ros~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 ros~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .code_fieldset {
     border: 1px solid #404A6D !important;
     background-color: #C3CAE1 !Important;
@@ -1764,9 +1764,9 @@ ul.ext-tab-head li.child-active {
     background-color: #8896C4 !Important;
     margin-bottom: 0px !Important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 bootstrap nav menu*~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 bootstrap nav menu*~~~~~~~~~~~~~~~~~*/
 .navbar-custom, .navbar-nav, .nav>.active>a, .navbar-nav>.active>a:hover,
 .navbar-nav>.active>a:focus {
     /* color: white;
@@ -1808,9 +1808,9 @@ ul.ext-tab-head li.child-active {
 .navbar-default .navbar-nav>li>a {
     color: #000000 !Important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 bootstrap nav menu*~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 bootstrap nav menu*~~~~~~~~~~~~~~~~~*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 bootstrap *~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 bootstrap *~~~~~~~~~~~~~~~~~~~~~~~~~*/
 input[type=checkbox], input[type=radio] {
     margin: 4px !Important;
 }
@@ -1965,7 +1965,7 @@ textarea.form-control {
   border-color: #404A6D !Important;
   margin:5px;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 bootstrap *~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 bootstrap *~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #globals_form_search {
     margin-top: -3px;
     padding: 2px 3px 1px 3px;
@@ -1973,7 +1973,7 @@ textarea.form-control {
 th.currentvalues, th.historicalvalues {
     background: #6B7CB6 !Important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 batch payments, EOB *~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 batch payments, EOB *~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .oe-payment-select {
     width: 80px !important;
     text-align: right;
@@ -1989,4 +1989,4 @@ th.currentvalues, th.historicalvalues {
 .oe-modal-dialog{
     width:65% !Important;
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~openemr5 batch payments, EOB *~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hms5 batch payments, EOB *~~~~~~~~~~~~~~~~~~~~~~~~~*/

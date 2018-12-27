@@ -1,12 +1,12 @@
-OpenEMR Bootstrap Project
+HMS Bootstrap Project
 =====
 Goal is to standardize user interface elements. The project is using bootstrap as base. This document will hopefully
 make things easier for developers by attempting to standardize code elements.
 
 Themes
 -----
-There are currently 3 different theme categories in OpenEMR. The `light` theme is the default modern theme. The `manila`
-theme is a combination of OpenEMR's legacy themes (which have all been removed) with some modern elements. And then all
+There are currently 3 different theme categories in HMS. The `light` theme is the default modern theme. The `manila`
+theme is a combination of HMS's legacy themes (which have all been removed) with some modern elements. And then all
 the other themes are basically the same theme with different color palettes.
 
 Buttons at bottom of form

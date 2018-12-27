@@ -1,6 +1,6 @@
 @import "core.css";
 
-/*below section is override bootstrap 3 for openemr and some new classes all prefixed with oe-*/
+/*below section is override bootstrap 3 for HMS and some new classes all prefixed with oe-*/
 .form-group {
     margin-bottom: 5px !Important;
 }
@@ -85,7 +85,7 @@ fieldset {
     line-height: 1.428571429;
     border-radius: 15px;
 }
-/*above section is override bootstrap 3 for openemr and some new classes all prefixed with oe-*/
+/*above section is override bootstrap 3 for HMS and some new classes all prefixed with oe-*/
 
 .nav-menu-img {
     display:none !important;

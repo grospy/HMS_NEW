@@ -30,7 +30,7 @@ if (!acl_check('acct', 'eob')) {
     <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative']; ?>/jquery-datetimepicker-2-5-4/build/jquery.datetimepicker.min.css">
 
 </head>
-<!-- style for OpenEMR color -->
+<!-- style for HMS color -->
 <body style='background-color:#fefdcf'>
 
 <!-- Begin tabs section  class="Clear"-->

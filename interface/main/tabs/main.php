@@ -36,10 +36,10 @@ function allFramesLoaded() {
 
 function goRepeaterServices(){
     // Ensure send the skip_timeout_reset parameter to not count this as a manual entry in the
-    //  timing out mechanism in OpenEMR.
+    //  timing out mechanism in HMS.
 
     // Send the skip_timeout_reset parameter to not count this as a manual entry in the
-    //  timing out mechanism in OpenEMR.
+    //  timing out mechanism in HMS.
     top.restoreSession();
     $.post("<?php echo $GLOBALS['webroot']; ?>/library/ajax/dated_reminders_counter.php",
         { skip_timeout_reset: "1" },

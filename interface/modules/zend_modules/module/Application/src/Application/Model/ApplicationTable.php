@@ -60,14 +60,7 @@ class ApplicationTable extends AbstractTableGateway
             }
         }
 
-      /**
-       * Function auditSQLEvent
-       * Logging Mechanism
-       *
-       * using OpenEMR log function (auditSQLEvent)
-       * Path /library/log.inc
-       * Logging, if the $log is true
-       */
+ 
         if ($log) {
             auditSQLEvent($sql, $result, $params);
         }
@@ -75,17 +68,7 @@ class ApplicationTable extends AbstractTableGateway
         return $return;
     }
 
-    /**
-     * Function errorHandler
-     * All error display and log
-     * Display the Error, Line and File
-     * Same behavior of HelpfulDie fuction in OpenEMR
-     * Path /library/sql.inc
-     *
-     * @param type    $e
-     * @param string  $sql
-     * @param array   $binds
-     */
+
     public function errorHandler($e, $sql, $binds = '')
     {
         $escaper = new \Zend\Escaper\Escaper('utf-8');
@@ -129,31 +112,13 @@ class ApplicationTable extends AbstractTableGateway
         error_log("ERROR: " . $logMsg, 0);
     }
 
-    /**
-     * Function quoteValue
-     * Escape Quotes in the value
-     *
-     * @param type $value
-     * @return type
-     */
+
     public function quoteValue($value)
     {
         return $this->adapter->platform->quoteValue($value);
     }
 
-    /**
-     * Function zAclCheck
-     * Check ACL in Zend
-     *
-     * Same Functionality in the OpemEMR
-     * for Left Nav ACL Check
-     * Path openemr/library/acl.inc
-     * Function Name zh_acl_check
-     *
-     * @param int     $user_id Auth user Id
-     * $param String  $section_identifier ACL Section id
-     * @return boolean
-     */
+
     public function zAclCheck($user_id, $section_identifier)
     {
         $sql_user_acl   = " SELECT 

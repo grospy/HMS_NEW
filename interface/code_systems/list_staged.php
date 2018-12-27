@@ -6,7 +6,7 @@
  * The logic will also render the appropriate action button which
  * can be one of the following:
  *      INSTALL - this is rendered when the external database has
- *                not been installed in this openEMR instance
+ *                not been installed in this HMS instance
  *      UPGRADE - this is rendered when the external database has
  *                been installed and the staged files are more recent
  *                than the instance installed
@@ -175,7 +175,7 @@ if (is_dir($mainPATH)) {
             } else if (is_numeric(strpos($db, "ICD"))) {
                 $qry_str = "SELECT `load_checksum`,`load_source`,`load_release_date` FROM `supported_external_dataloads` WHERE `load_type` = ? and `load_filename` = ? and `load_checksum` = ? ORDER BY `load_release_date` DESC";
 
-        // this query determines whether you can load the data into openEMR. you must have the correct
+        // this query determines whether you can load the data into HMS. you must have the correct
         // filename and checksum for each file that are part of the same release.
         //
         // IMPORTANT: Releases that contain mutliple zip file (e.g. ICD10) are grouped together based

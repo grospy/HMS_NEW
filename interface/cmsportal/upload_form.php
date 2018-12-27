@@ -107,7 +107,7 @@ if ($result['errmsg']) {
     die(text($result['errmsg']));
 }
 
-// Look up the patient in OpenEMR.
+// Look up the patient in HMS.
 $userlogin = $messageid ? $result['message']['user'] : $result['post']['user'];
 $ptid = lookup_openemr_patient($userlogin);
 ?>

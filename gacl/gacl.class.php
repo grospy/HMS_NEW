@@ -1,35 +1,6 @@
 <?php
 // $Id$
 
-/**
- * phpGACL - Generic Access Control List
- * Copyright (C) 2002,2003 Mike Benoit
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * For questions, help, comments, discussion, etc., please join the
- * phpGACL mailing list. http://sourceforge.net/mail/?group_id=57103
- *
- * You may contact the author of phpGACL by e-mail at:
- * ipso@snappymail.ca
- *
- * The latest version of phpGACL can be obtained from:
- * http://phpgacl.sourceforge.net/
- *
- * @package phpGACL
- */
 
 /*
  * Path to ADODB.
@@ -284,20 +255,7 @@ class gacl {
 		return $acl_result['allow'];
 	}
 
-	/**
-	* Wraps the actual acl_query() function.
-	*
-	* Quick access to the return value of an ACL.
-	* @param string The ACO section value
-	* @param string The ACO value
-	* @param string The ARO section value
-	* @param string The ARO section
-	* @param string The AXO section value (optional)
-	* @param string The AXO section value (optional)
-	* @param integer The group id of the ARO (optional)
-	* @param integer The group id of the AXO (optional)
-	* @return string The return value of the ACL
-	*/
+
 	function acl_return_value($aco_section_value, $aco_value, $aro_section_value, $aro_value, $axo_section_value=NULL, $axo_value=NULL, $root_aro_group=NULL, $root_axo_group=NULL) {
 		$acl_result = $this->acl_query($aco_section_value, $aco_value, $aro_section_value, $aro_value, $axo_section_value, $axo_value, $root_aro_group, $root_axo_group);
 
@@ -341,21 +299,7 @@ class gacl {
 
 	}
 
-	/**
-	* The Main function that does the actual ACL lookup.
-        *
-	* @param string The ACO section value
-	* @param string The ACO value
-	* @param string The ARO section value
-	* @param string The ARO value
-	* @param string The AXO section value (optional)
-	* @param string The AXO value (optional)
-	* @param string The value of the ARO group (optional)
-	* @param string The value of the AXO group (optional)
-	* @param boolean Debug the operation if true (optional)
-        * @param boolean Option to return all applicable ACL's rather than just one. (optional) (Added by OpenEMR)
-	* @return array Returns as much information as possible about the ACL so other functions can trim it down and omit unwanted data.
-	*/
+
 	function acl_query($aco_section_value, $aco_value, $aro_section_value, $aro_value, $axo_section_value=NULL, $axo_value=NULL, $root_aro_group=NULL, $root_axo_group=NULL, $debug=NULL, $return_all=FALSE) {
 
 		$cache_id = 'acl_query_'.$aco_section_value.'-'.$aco_value.'-'.$aro_section_value.'-'.$aro_value.'-'.$axo_section_value.'-'.$axo_value.'-'.$root_aro_group.'-'.$root_axo_group.'-'.$debug.'-'.$return_all;
@@ -385,7 +329,7 @@ class gacl {
 			 * The ordering is very important here, as well very tricky to get correct.
 			 * Currently there can be  duplicate ACLs, or ones that step on each other toes. In this case, the ACL that was last updated/created
 			 * is used; unless the $return_all parameter is set to TRUE, then will return the entire array of applicable ACL information (this
-                         * option was added by OpenEMR)
+                         * option was added by HMS)
 			 *
 			 * This is probably where the most optimizations can be made.
 			 */

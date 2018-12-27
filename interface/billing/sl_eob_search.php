@@ -413,7 +413,7 @@ if (($_POST['form_print'] || $_POST['form_download'] || $_POST['form_email'] || 
        // and start a new one.  This is an associative array:
        //
        //  cid     = same as pid
-       //  pid     = OpenEMR patient ID
+       //  pid     = HMS patient ID
        //  patient = patient name
        //  amount  = total amount due
        //  adjust  = adjustments (already applied to amount)
@@ -875,7 +875,7 @@ if ($_POST['form_search'] || $_POST['form_print']) {
     $num_invoices = sqlNumRows($t_res);
     if ($eracount && $num_invoices != $eracount) {
           $alertmsg .= "Of $eracount remittances, there are $num_invoices " .
-          "matching encounters in OpenEMR. ";
+          "matching encounters in HMS. ";
     }
 ?>
 

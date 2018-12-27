@@ -49,7 +49,7 @@ if (!empty($_POST['bn_save'])) {
     if ($form_filename) {
         // Textareas, at least in Firefox, return a \r\n at the end of each line
         // even though only \n was originally there.  For consistency with
-        // normal OpenEMR usage we translate those back.
+        // normal HMS usage we translate those back.
         file_put_contents($filepath, str_replace(
             "\r\n",
             "\n",

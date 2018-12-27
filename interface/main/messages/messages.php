@@ -57,7 +57,7 @@ if (($_POST['setting_bootstrap_submenu']) ||
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="MedEx Bank">
-    <meta name="author" content="OpenEMR: MedExBank">
+    <meta name="author" content="HMS: MedExBank">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .btn {

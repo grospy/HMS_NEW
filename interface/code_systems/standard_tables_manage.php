@@ -1,7 +1,7 @@
 <?php
 /**
  * This file implements the database load processing when loading external
- * database files into openEMR
+ * database files into HMS
  *
  */
 

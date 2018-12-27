@@ -50,10 +50,10 @@ if ($result['errmsg']) {
     die(text($result['errmsg']));
 }
 
-// Look up the patient in OpenEMR.
+// Look up the patient in HMS.
 $ptid = lookup_openemr_patient($result['post']['user']);
 
-// Get patient's current history data in OpenEMR.
+// Get patient's current history data in HMS.
 $hyrow = getHistoryData($ptid, "*");
 ?>
 <html>

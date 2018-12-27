@@ -74,7 +74,7 @@ function myRestoreSession() {
 }
 
 function openPatient(ptid) {
- // This works whether we are a popup or in the OpenEMR frameset.
+ // This works whether we are a popup or in the HMS frameset.
  myRestoreSession();
  document.location.href = 'patient_form.php?postid=<?php echo xls($postid); ?>&ptid=' + ptid;
 }

@@ -33,7 +33,7 @@ function cms_portal_call($args)
     return unserialize($presult);
 }
 
-// Look up the OpenEMR patient matching this request. More or less than 1 is an error.
+// Look up the HMS patient matching this request. More or less than 1 is an error.
 function lookup_openemr_patient($wp_login)
 {
     if (empty($wp_login)) {

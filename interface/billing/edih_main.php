@@ -4,7 +4,7 @@
  *
  */
 
-/* these lines for OpenEMR
+/* these lines for HMS
  */
 
 
@@ -21,7 +21,7 @@ define('SITE_IN', 1);
 // however for a startup they may, or a "mask" value of 1000 or 10000
 // would be a good idea if there are problems with deciphering the pid-encounter
 // same idea for pid value, but since encounter is unique and always last, it is essential
-// possibly check the mask value in OpenEMR globals to set this
+// possibly check the mask value in HMS globals to set this
 
 
 // Try to prevent search for too short encounter value
@@ -29,7 +29,7 @@ if (!defined("ENCOUNTER_MIN_DIGIT_LENGTH")) {
     define("ENCOUNTER_MIN_DIGIT_LENGTH", 1);
 }
 
-// these delimiters are hardcoded into OpenEMR batch files
+// these delimiters are hardcoded into HMS batch files
 if (!defined("SEG_ELEM_DELIM")) {
     define("SEG_ELEM_DELIM", "*");
 }
