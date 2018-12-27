@@ -1,5 +1,5 @@
 <?php
-//  OpenEMR
+//  HMS
 //  MySQL Config
 
 $host	= 'localhost';

@@ -14,7 +14,7 @@ if (!$allow_cloning_setup && !empty($_REQUEST['clone_database'])) {
     die("To turn on support for cloning setup, need to edit this script and change \$allow_cloning_setup to true. After you are done setting up the cloning, ensure you change \$allow_cloning_setup back to false or remove this script altogether");
 }
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with HMS:
 require_once(dirname(__FILE__) . "/common/compatibility/Checker.php");
 
 use OpenEMR\Common\Checker;
@@ -40,12 +40,12 @@ $ippf_specific = false;
 if (!$COMMAND_LINE && empty($_REQUEST['site'])) {
     echo "<html>\n";
     echo "<head>\n";
-    echo "<title>OpenEMR Setup Tool</title>\n";
+    echo "<title>HMS Setup Tool</title>\n";
     echo "<link rel='stylesheet' href='interface/themes/style_blue.css'>\n";
     echo "</head>\n";
     echo "<body>\n";
     echo "<p><b>Optional Site ID Selection</b></p>\n";
-    echo "<p>Most OpenEMR installations support only one site.  If that is " .
+    echo "<p>Most HMS installations support only one site.  If that is " .
     "true for you then ignore the rest of this text and just click Continue.</p>\n";
     echo "<p>Otherwise please enter a unique Site ID here.</p>\n";
     echo "<p>A Site ID is a short identifier with no spaces or special " .
@@ -121,7 +121,7 @@ if (file_exists($OE_SITE_DIR)) {
 ?>
 <HTML>
 <HEAD>
-<TITLE>OpenEMR Setup Tool</TITLE>
+<TITLE>HMS Setup Tool</TITLE>
 <LINK REL=STYLESHEET HREF="interface/themes/style_blue.css">
 <link rel="shortcut icon" href="public/images/favicon.ico" />
 
@@ -144,7 +144,7 @@ function cloneClicked() {
 </HEAD>
 <BODY>
 
-<span class="title">OpenEMR Setup</span>
+<span class="title">HMS Setup</span>
 <br><br>
 <span class="text">
 <?php
@@ -175,29 +175,29 @@ if (!(extension_loaded("mbstring") )) {
 if ($state == 7) {
 ?>
 
-<p>Congratulations! OpenEMR is now installed.</p>
+<p>Congratulations! HMS is now installed.</p>
 
 <ul>
 <li>Access controls (php-GACL) are installed for fine-grained security, and can be administered in
-    OpenEMR's admin->acl menu.</li>
+HMS's admin->acl menu.</li>
 <li>Reviewing <?php echo $OE_SITE_DIR; ?>/config.php is a good idea. This file
     contains some settings that you may want to change.</li>
-<li>There's much information and many extra tools bundled within the OpenEMR installation directory.
+<li>There's much information and many extra tools bundled within the HMS installation directory.
     Please refer to openemr/Documentation. Many forms and other useful scripts can be found at openemr/contrib.</li>
 <li>To ensure a consistent look and feel throughout the application,
     <a href='http://www.mozilla.org/products/firefox/'>Firefox</a> and <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> are recommended. The OpenEMR development team exclusively tests with modern versions of these browsers.</li>
-<li>The OpenEMR project home page, documentation, and forums can be found at <a href = "http://www.open-emr.org" target="_blank">http://www.open-emr.org</a></li>
-<li>We pursue grants to help fund the future development of OpenEMR.  To apply for these grants, we need to estimate how many times this program is installed and how many practices are evaluating or using this software.  It would be awesome if you would email us at <a href="mailto:president@oemr.org">president@oemr.org</a> if you have installed this software. The more details about your plans with this software, the better, but even just sending us an email stating you just installed it is very helpful.</li>
+<li>The HMS project home page, documentation, and forums can be found at <a href = "http://www.open-emr.org" target="_blank">http://www.open-emr.org</a></li>
+<li>We pursue grants to help fund the future development of HMS.  To apply for these grants, we need to estimate how many times this program is installed and how many practices are evaluating or using this software.  It would be awesome if you would email us at <a href="mailto:president@oemr.org">president@oemr.org</a> if you have installed this software. The more details about your plans with this software, the better, but even just sending us an email stating you just installed it is very helpful.</li>
 </ul>
 <p>
 We recommend you print these instructions for future reference.
 </p>
 <?php if (empty($installer->clone_database)) {
-    echo "<p><b>The initial OpenEMR user is '".$installer->iuser."' and the password is '".$installer->iuserpass."'</b></p>";
+    echo "<p><b>The initial HMS user is '".$installer->iuser."' and the password is '".$installer->iuserpass."'</b></p>";
     echo "<p>If you edited the PHP or Apache configuration files during this installation process, then we recommend you restart your Apache server before following below OpenEMR link.</p>";
 } ?>
 <p>
- <a href='./?site=<?php echo $site_id; ?>'>Click here to start using OpenEMR. </a>
+ <a href='./?site=<?php echo $site_id; ?>'>Click here to start using HMS. </a>
 </p>
 
 <?php
@@ -211,7 +211,7 @@ $inst = isset($_POST["inst"]) ? ($_POST["inst"]) : '';
 
 
 if (($config == 1) && ($state < 4)) {
-    echo "OpenEMR has already been installed.  If you wish to force re-installation, then edit $installer->conffile (change the 'config' variable to 0), and re-run this script.<br>\n";
+    echo "HMS has already been installed.  If you wish to force re-installation, then edit $installer->conffile (change the 'config' variable to 0), and re-run this script.<br>\n";
 } else {
     switch ($state) {
         case 1:
@@ -240,8 +240,8 @@ if (($config == 1) && ($state < 4)) {
 <TR VALIGN='TOP'><TD COLSPAN=2><font color='red'>MYSQL SERVER:</font></TD></TR>
 <TR VALIGN='TOP'><TD><span class='text'>Server Host: </span></TD><TD><INPUT TYPE='TEXT' VALUE='localhost' NAME='server' SIZE='30'></TD><TD><span class='text'>(If you run MySQL and Apache/PHP on the same computer, then leave this as 'localhost'. If they are on separate computers, then enter the IP address of the computer running MySQL.)</span><br></TD></TR>
 <TR VALIGN='TOP'><TD><span class='text'>Server Port: </span></TD><TD><INPUT TYPE='TEXT' VALUE='3306' NAME='port' SIZE='30'></TD><TD><span class='text'>(This is the MySQL port. The default port for MySQL is 3306.)</span><br></TD></TR>
-<TR VALIGN='TOP'><TD><span class='text'>Database Name: </span></TD><TD><INPUT TYPE='TEXT' VALUE='openemr' NAME='dbname' SIZE='30'></TD><TD><span class='text'>(This is the name of the OpenEMR database in MySQL - 'openemr' is the recommended)</span><br></TD></TR>
-<TR VALIGN='TOP'><TD><span class='text'>Login Name: </span></TD><TD><INPUT TYPE='TEXT' VALUE='openemr' NAME='login' SIZE='30'></TD><TD><span class='text'>(This is the name of the OpenEMR login name in MySQL - 'openemr' is the recommended)</span><br></TD></TR>
+<TR VALIGN='TOP'><TD><span class='text'>Database Name: </span></TD><TD><INPUT TYPE='TEXT' VALUE='openemr' NAME='dbname' SIZE='30'></TD><TD><span class='text'>(This is the name of the HMS database in MySQL - 'openemr' is the recommended)</span><br></TD></TR>
+<TR VALIGN='TOP'><TD><span class='text'>Login Name: </span></TD><TD><INPUT TYPE='TEXT' VALUE='openemr' NAME='login' SIZE='30'></TD><TD><span class='text'>(This is the name of the HMS login name in MySQL - 'openemr' is the recommended)</span><br></TD></TR>
 <TR VALIGN='TOP'><TD><span class='text'>Password: </span></TD><TD><INPUT TYPE='PASSWORD' VALUE='' NAME='pass' SIZE='30'></TD><TD><span class='text'>(This is the Login Password for when PHP accesses MySQL - it should be at least 8 characters long and composed of both numbers and letters)</span><br></TD></TR>\n";
             if ($inst != 2) {
                 echo "<TR VALIGN='TOP'><TD><span class='text'>Name for Root Account: </span></TD><TD><INPUT TYPE='TEXT' VALUE='root' NAME='root' SIZE='30'></TD><TD><span class='text'>(This is name for MySQL root account. For localhost, it is usually ok to leave it 'root'.)</span><br></TD></TR>

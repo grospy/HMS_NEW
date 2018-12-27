@@ -85,26 +85,6 @@ if (isset($_GET['starttimeh'])) {
 // ===========================
 // EVENTS TO FACILITIES (lemonsoftware)
 // edit event case - if there is no association made, then insert one with the first facility
-/*if ( $eid ) {
-    $selfacil = '';
-    $facility = sqlQuery("SELECT pc_facility, pc_multiple FROM openemr_postcalendar_events WHERE pc_eid = $eid");
-    if ( !$facility['pc_facility'] ) {
-        $qmin = sqlQuery("SELECT MIN(id) as minId FROM facility");
-        $min  = $qmin['minId'];
-
-        // multiple providers case
-        if ( $GLOBALS['select_multi_providers'] ) {
-            $mul  = $facility['pc_multiple'];
-            sqlStatement("UPDATE openemr_postcalendar_events SET pc_facility = $min WHERE pc_multiple = $mul");
-        }
-        // EOS multiple
-
-        sqlStatement("UPDATE openemr_postcalendar_events SET pc_facility = $min WHERE pc_eid = $eid");
-        $e2f = $minId;
-    } else {
-        $e2f = $facility['pc_facility'];
-    }
-}*/
 // EOS E2F
 // ===========================
 // ===========================

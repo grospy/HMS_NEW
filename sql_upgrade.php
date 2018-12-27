@@ -59,13 +59,13 @@ ksort($versions);
 ?>
 <html>
 <head>
-<title>OpenEMR Database Upgrade</title>
+<title>HMS Database Upgrade</title>
 <link rel='STYLESHEET' href='interface/themes/style_blue.css'>
 <link rel="shortcut icon" href="public/images/favicon.ico" />
 </head>
 <body>
 <center>
-<span class='title'>OpenEMR Database Upgrade</span>
+<span class='title'>HMS Database Upgrade</span>
 <br>
 </center>
 <?php
