@@ -44,7 +44,7 @@ $(document).ready(function(){
 function pagination(action){
 	if(action == "first") {
 		document.getElementById('form_current_page').value=1   
-	}else if (action == "last") {
+	} else if (action == "last") {
 		document.getElementById('form_current_page').value=document.getElementById('form_total_pages').value;
 	}
 	else if (action == "next") {
@@ -146,13 +146,3 @@ function validate_search()
         }
         
 }
-
-
-
-
- 
-
-
-
-
-         
