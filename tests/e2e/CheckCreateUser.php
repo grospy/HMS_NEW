@@ -38,12 +38,12 @@ class CheckCreateUserTest extends PHPUnit_Extensions_Selenium2TestCase
 
 
    /**
-    * Tests Add Patient to openEMR
+    * Tests Add Patient to HMS
     */
     public function testAddPatient(  ){
         $testset = $this->generateTestData();
 
-        /*connect to openemr*/
+        /*connect to HMS*/
         $this->url(self::URL);
         /*Move to frame Login and add login values*/
         $this->frame("Login");
@@ -53,7 +53,7 @@ class CheckCreateUserTest extends PHPUnit_Extensions_Selenium2TestCase
         $sumbmitClick->click();
 
         /*Check that the login was succesfull coparing the title from the page*/
-        $this->assertEquals('OpenEMR',$this->title(),"Login Failed");
+        $this->assertEquals('HMS',$this->title(),"Login Failed");
 
         /*Move to frame left nav and click on new patient*/
         $this->frame("left_nav");
@@ -130,7 +130,7 @@ class CheckCreateUserTest extends PHPUnit_Extensions_Selenium2TestCase
     }
 
     /**
-     * connect to OpenEMR database
+     * connect to HMS database
      */
     private function database_connection(){
       require_once( __DIR__."/../../sites/default/sqlconf.php" );

@@ -849,7 +849,7 @@ function populateResult(pd) {
         },
         "status": pd.order_status,
         "reference_range": {
-            "range": pd.subtest.range //OpenEMR doesn't have high/low so show range as text.
+            "range": pd.subtest.range //HMS doesn't have high/low so show range as text.
         },
         /*"reference_range": {
             "low": pd.subtest.range,

@@ -1,5 +1,4 @@
 <?php
-/** @package    Openemr::Model::DAO */
 
 
 

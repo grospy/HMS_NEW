@@ -203,7 +203,7 @@ $row1 = sqlFetchArray($result[1]);
     $e_Name = $ccr->createElement('Name', 'OEMR');
     $e_InformationSystem->appendChild($e_Name);
   
-  $e_Type = $ccr->createElement('Type', 'OpenEMR');
+  $e_Type = $ccr->createElement('Type', 'HMS');
     $e_InformationSystem->appendChild($e_Type);
   
   $e_Version = $ccr->createElement('Version', '4.x');
