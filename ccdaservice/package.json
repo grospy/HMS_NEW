@@ -6,7 +6,7 @@
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/openemr/openemr/tree/master/ccdaservice"
+        "url": ""
     },
     "keywords": [
         "node.js",

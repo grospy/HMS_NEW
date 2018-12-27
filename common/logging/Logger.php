@@ -33,8 +33,7 @@ class Logger
      * Sets the log file on the operating system's temporary directory. Format is:
      * [log area] + FILE_SEP + YYYY_MM_DD_application.log
      *
-     * On *nix, the file will be stored in /home/current_user/openemr/ (if writable). On Windows, it will
-     * be stored in C:\Users\current_user\openemr\ (if writable).
+     * 
      */
     private function determineLogFilePath()
     {
