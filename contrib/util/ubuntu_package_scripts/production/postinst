@@ -14,12 +14,12 @@
 #  2) Install or Upgrade
 #    -Install
 #      a) Collect the MySQL root password (if possible)
-#      b) Ensure OpenEMR MySQL database and user do not exist. (if applicable)
-#      c) Configure OpenEMR (if applicable)
+#      b) Ensure HMS MySQL database and user do not exist. (if applicable)
+#      c) Configure HMS (if applicable)
 #      d) Configure Apache
 #      e) Configure PHP
 #    -Upgrade
-#      a) Modify new OpenEMR version configuration files
+#      a) Modify new HMS version configuration files
 #      b) Upgrade MySQL database(s)
 #      c) Upgrade Access Controls
 #      d) Copy over old configuration files
@@ -27,7 +27,7 @@
 #  3) Modify permissions for writable directories
 #  4) Secure the php installation/upgrading scripts (if applicable)
 #  5) Modify the package configuration file
-#  6) Display instructions on starting openemr
+#  6) Display instructions on starting hms
 #
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>

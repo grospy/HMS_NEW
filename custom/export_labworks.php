@@ -158,7 +158,7 @@ if ($row['providerID']) {
  Add($row['postal_code']);         // zip
  Add(Digits($row['phone_home']));  // home phone
 
- // Guarantor Section.  OpenEMR does not have guarantors so we use the primary
+ // Guarantor Section.  HMS does not have guarantors so we use the primary
  // insurance subscriber if there is one, otherwise the patient.
  //
 if (trim($row['lname1'])) {

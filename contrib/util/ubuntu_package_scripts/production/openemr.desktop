@@ -4,5 +4,5 @@ Exec=sensible-browser http://localhost/openemr
 Type=Application
 Categories=Application;Office;
 StartupNotify=true
-Name=Electronic Medical Records - OpenEMR
+Name=Electronic Medical Records - HMS
 Comment=Medical Practice Management Application

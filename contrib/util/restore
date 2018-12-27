@@ -8,7 +8,7 @@
 # of the License, or (at your option) any later version.
 #
 # This is for restoring a backup created by the "Backup" option
-# in OpenEMR's administration menu, which invokes
+# in HMS's administration menu, which invokes
 # interface/main/backup.php.
 #
 # Xdialog is supported if available... dialog support is also in
@@ -35,7 +35,7 @@ dlg_msg() {
       MSG="$MSG\n$1"
       shift
     done
-    $DLGCMD --title 'OpenEMR Restore' $LEFT --msgbox "$MSG" 0 0
+    $DLGCMD --title 'HMS Restore' $LEFT --msgbox "$MSG" 0 0
     return 0
   fi
   while [ ! -z "$1" ]; do
@@ -49,7 +49,7 @@ dlg_info() {
     if [ "$DLGCMD" = "Xdialog" ]; then
       echo "$1"
     fi
-    $DLGCMD --title 'OpenEMR Restore' $LEFT --infobox "$1" 0 0
+    $DLGCMD --title 'HMS Restore' $LEFT --infobox "$1" 0 0
     return 0
   fi
   echo "$1"
@@ -58,7 +58,7 @@ dlg_info() {
 dlg_fselect() {
   if [ ! -z "$DLGCMD" ]; then
     exec 3>&1
-    RESULT=`$DLGCMD --title 'OpenEMR Restore' --backtitle "$1" $NOBUTTONS --fselect $HOME/ 0 70 2>&1 1>&3`
+    RESULT=`$DLGCMD --title 'HMS Restore' --backtitle "$1" $NOBUTTONS --fselect $HOME/ 0 70 2>&1 1>&3`
     CODE=$?
     exec 3>&-
     if [ $CODE -eq 0 ]; then
@@ -79,7 +79,7 @@ dlg_yesno() {
       MSG="$MSG\n$1"
       shift
     done
-    $DLGCMD --title 'OpenEMR Restore' $DEFAULTNO $LEFT --yesno "$MSG" 0 0
+    $DLGCMD --title 'HMS Restore' $DEFAULTNO $LEFT --yesno "$MSG" 0 0
     CODE=$?
     exec 3>&-
     if [ $CODE -eq 0 ]; then
@@ -104,7 +104,7 @@ dlg_yesno() {
 dlg_input() {
   if [ ! -z "$DLGCMD" ]; then
     exec 3>&1
-    RESULT=`$DLGCMD --title 'OpenEMR Restore' $LEFT --inputbox "$1" 0 0 2>&1 1>&3`
+    RESULT=`$DLGCMD --title 'HMS Restore' $LEFT --inputbox "$1" 0 0 2>&1 1>&3`
     CODE=$?
     exec 3>&-
     if [ $CODE -eq 0 ]; then
@@ -162,7 +162,7 @@ while [ $LOOKING -eq 1 ]; do
   fi
 done
 
-# Extract the OpenEMR web directory tree.
+# Extract the HMS web directory tree.
 dlg_info "Extracting $BAKDIR/openemr.tar.gz ..."
 mkdir openemr
 cd openemr
@@ -239,11 +239,11 @@ if [ $CHANGES -gt 0 ]; then
   dlg_msg "Current values are shown in [brackets]. Just hit Enter to leave them as-is."
   dlg_input "Site ID [$SITEID]? "
   if [ ! -z "$RESULT" ]; then SITEID="$RESULT"; fi
-  dlg_input "OpenEMR database name [$OEDBNAME]? "
+  dlg_input "HMS database name [$OEDBNAME]? "
   if [ ! -z "$RESULT" ]; then OEDBNAME="$RESULT"; fi
-  dlg_input "OpenEMR database user [$OEDBUSER]? "
+  dlg_input "HMS database user [$OEDBUSER]? "
   if [ ! -z "$RESULT" ]; then OEDBUSER="$RESULT"; fi
-  dlg_input "OpenEMR database password [$OEDBPASS]? "
+  dlg_input "HMS database password [$OEDBPASS]? "
   if [ ! -z "$RESULT" ]; then OEDBPASS="$RESULT"; fi
   if [ ! -z "$GADBNAME" ]; then
     dlg_input "phpGACL database name [$GADBNAME]? "
@@ -254,7 +254,7 @@ if [ $CHANGES -gt 0 ]; then
       dlg_input "phpGACL database user [$GADBUSER]? "
       if [ ! -z "$RESULT" ]; then GADBUSER="$RESULT"; fi
       if [ "$GADBUSER" = "$SLDBUSER" ]; then
-        dlg_msg "Error: OpenEMR and phpGACL have separate databases but the same user name." "They must be different user names."
+        dlg_msg "Error: HMS and phpGACL have separate databases but the same user name." "They must be different user names."
         GADBUSER="$OLDGADBUSER"
       else
         LOOKING=0
@@ -273,7 +273,7 @@ if [ $CHANGES -gt 0 ]; then
     if [ ! -z "$RESULT" ]; then SLDBPASS="$RESULT"; fi
   fi
   OLDOEDIR="$OEDIR"
-  dlg_input "New OpenEMR web directory [$OEDIR]? "
+  dlg_input "New HMS web directory [$OEDIR]? "
   if [ ! -z "$RESULT" ]; then OEDIR="$RESULT"; fi
   if [ ! -z "$GADIR" ]; then
     OLDGADIR="$GADIR"
@@ -300,11 +300,11 @@ else
 fi
 
 # If phpgacl has its own database, make sure the database user is not the
-# same as for openemr.  This is to prevent screwups caused by persistent
+# same as for hms.  This is to prevent screwups caused by persistent
 # database connections in PHP.
 if [ ! -z "$GADBNAME" ]; then
   if [ "$GADBUSER" = "$OEDBUSER" ]; then
-    dlg_msg "Error: OpenEMR and phpGACL have separate databases but the same user name." "They must be different user names."
+    dlg_msg "Error: HMS and phpGACL have separate databases but the same user name." "They must be different user names."
     exit 1
   fi
 fi
@@ -314,11 +314,11 @@ fi
 
 TRASH=`expr "$OEDIR" : "[/]"`
 if [ $TRASH -ne 1 ]; then
-  dlg_msg "Error: The OpenEMR directory path '$OEDIR' does not start with '/'."
+  dlg_msg "Error: The HMS directory path '$OEDIR' does not start with '/'."
   exit 1
 fi
 if [ -e "$OEDIR" -a ! -e "$OEDIR/interface/globals.php" ]; then
-  dlg_msg "Error: $OEDIR already exists but does not look like an OpenEMR directory." "If you are really sure you want to replace it, please remove it first."
+  dlg_msg "Error: $OEDIR already exists but does not look like an HMS directory." "If you are really sure you want to replace it, please remove it first."
   exit 1
 fi
 
@@ -373,10 +373,10 @@ MARGS="\"Your Site ID will be '$SITEID'.\""
 if [ -e "$OEDIR" ]; then
   MARGS="$MARGS \"Only site-specific files will be restored to '$OEDIR/sites/$SITEID' in the existing OpenEMR web directory.\""
 else
-  MARGS="$MARGS \"I will install a new OpenEMR web directory '$OEDIR' from the backup.\""
+  MARGS="$MARGS \"I will install a new HMS web directory '$OEDIR' from the backup.\""
 fi
-MARGS="$MARGS \"I will restore the OpenEMR database backup to the MySQL database '$OEDBNAME'.\""
-MARGS="$MARGS \"The OpenEMR database user will be '$OEDBUSER' with password '$OEDBPASS'.\""
+MARGS="$MARGS \"I will restore the HMS database backup to the MySQL database '$OEDBNAME'.\""
+MARGS="$MARGS \"The HMS database user will be '$OEDBUSER' with password '$OEDBPASS'.\""
 if [ ! -z "$GADBNAME" ]; then
   MARGS="$MARGS \"I will restore the phpGACL database backup to the MySQL database '$GADBNAME'.\""
   MARGS="$MARGS \"The phpGACL database user will be '$GADBUSER' with password '$GADBPASS'.\""
@@ -417,10 +417,10 @@ MYROOTPASS="$RESULT"
 
 dlg_blank_line
 
-dlg_info "Dropping old OpenEMR database if it exists ..."
+dlg_info "Dropping old HMS database if it exists ..."
 mysqladmin --password="$MYROOTPASS" --force drop $OEDBNAME 2> /dev/null
 
-dlg_info "Restoring OpenEMR database ..."
+dlg_info "Restoring HMS database ..."
 cd $BAKDIR
 gunzip openemr.sql.gz
 if [ $? -ne 0 ]; then
