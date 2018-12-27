@@ -1,18 +1,5 @@
 <?php
-/**
- * MenuRole class.
- * (note this consolidated several libraries and maintained the author/copyright credits)
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Kevin Yeh <kevin.y@integralemr.com>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2016 Kevin Yeh <kevin.y@integralemr.com>
- * @copyright Copyright (c) 2016-2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2017 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 namespace OpenEMR\Menu;
 

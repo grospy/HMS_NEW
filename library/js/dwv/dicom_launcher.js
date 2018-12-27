@@ -1,12 +1,4 @@
-/**
- * DWV (Dicom Web Viewer) application launcher
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Victor Kofia <victor.kofia@gmail.com>
- * @copyright Copyright (c) 2016 Victor Kofia <victor.kofia@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 /**
  * Application launcher.

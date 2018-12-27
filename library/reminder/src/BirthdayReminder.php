@@ -1,15 +1,5 @@
 <?php
-/**
- * BirthdayReminder class.
- *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Sharon Cohen <sharonco@matrix.co.il>
- * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2017 Sharon Cohen <sharonco@matrix.co.il>
- * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
+
 
 namespace OpenEMR\Reminder;
 
