@@ -12,7 +12,7 @@ use DBI;
 # of the License, or (at your option) any later version.
 #
 # This loads CPT codes and their modifiers and fees into the "codes"
-# table of OpenEMR.  If the row already exists then only the fee is
+# table of HMS.  If the row already exists then only the fee is
 # modified, otherwise a new row is created with no description.
 # See also load_cpt_desc.plx which loads the descriptions.
 #

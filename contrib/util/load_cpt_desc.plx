@@ -12,7 +12,7 @@ use DBI;
 # of the License, or (at your option) any later version.
 #
 # This loads descriptions of CPT codes into the "codes" table of
-# OpenEMR.  The codes must already be in the table
+# HMS.  The codes must already be in the table
 # (see load_doc_fees.plx).
 #
 # Run it like this:
@@ -31,7 +31,7 @@ use DBI;
 my $DBNAME = "openemr";  # database name
 
 # To load the short descriptions (SHORTU.txt, not currently used by
-# OpenEMR but probably should), change this to "code_text_short":
+# HMS but probably should), change this to "code_text_short":
 #
 my $TEXT_COL = "code_text";
 

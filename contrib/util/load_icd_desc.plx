@@ -10,7 +10,7 @@ use strict;
 # of the License, or (at your option) any later version.
 #######################################################################
 # This loads ICD9 codes and descriptions into the "codes" table of
-# OpenEMR, scraping from from www.icd9data.com.
+# HMS, scraping from from www.icd9data.com.
 # Alternatively you can just dump the INSERT statements to stdout.
 #######################################################################
 

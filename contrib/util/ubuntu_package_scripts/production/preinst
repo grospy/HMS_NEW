@@ -13,9 +13,9 @@
 #  1) Create log file
 #  2) New install or Upgrade
 #    -Install
-#      a) If OpenEMR web directory already exist, then attempt an upgrade.
+#      a) If HMS web directory already exist, then attempt an upgrade.
 #    -Upgrade (also works for multisite module, so can be mutliple databases)
-#      a) Ensure OpenEMR web directory does exist
+#      a) Ensure HMS web directory does exist
 #      b) Collect package version and ensure appropriate upgrade
 #      c) Collect webpath and sql settings from current version
 #      d) Verify the mysql user(s)/database(s) exist

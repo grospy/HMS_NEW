@@ -12,7 +12,7 @@ use DBI;
 # of the License, or (at your option) any later version.
 #
 # This loads the FDA Orange Book data for drugs into the "drugs"
-# table of OpenEMR. If a row already exists with the same drug name
+# table of HMS. If a row already exists with the same drug name
 # it is ignored, otherwise a new row is created with the drug
 # trade name provided from the Orange Book data.
 #

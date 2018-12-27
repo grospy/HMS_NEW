@@ -371,7 +371,7 @@ fi
 #
 MARGS="\"Your Site ID will be '$SITEID'.\""
 if [ -e "$OEDIR" ]; then
-  MARGS="$MARGS \"Only site-specific files will be restored to '$OEDIR/sites/$SITEID' in the existing OpenEMR web directory.\""
+  MARGS="$MARGS \"Only site-specific files will be restored to '$OEDIR/sites/$SITEID' in the existing HMS web directory.\""
 else
   MARGS="$MARGS \"I will install a new HMS web directory '$OEDIR' from the backup.\""
 fi
@@ -533,7 +533,7 @@ if [ -e "$OEDIR" ]; then
     exit 1
   fi
 else
-  dlg_info "Restoring OpenEMR web directory tree ..."
+  dlg_info "Restoring HMS web directory tree ..."
   mv $BAKDIR/openemr $OEDIR
   if [ $? -ne 0 ]; then
     dlg_msg "Error: Cannot create directory '$OEDIR'."
