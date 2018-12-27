@@ -10,8 +10,8 @@
 # date   03/25/09
 #
 # This is a perl script that will collect unique constants within
-# OpenEMR source code.
-#  It effectively finds all xl("constants","") within OpenEMR.
+# HMS source code.
+#  It effectively finds all xl("constants","") within HMS.
 #  It will filter out constants found in manuallyRemovedConstants.txt
 #  It will add constants found in (ensure not repeated) manuallyAddedConstants.txt 
 #  It can also compare to a previous list to find new constants.

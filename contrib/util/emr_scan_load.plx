@@ -23,7 +23,7 @@ use DBI;
 #######################################################################
 # NOTE: This is contributed as-is for the possible benefit of those who
 # may wish to build on it.  As of this writing it is not known how well
-# it works, if at all, with current OpenEMR.
+# it works, if at all, with current HMS.
 #######################################################################
 
 #######################################################################
@@ -44,7 +44,7 @@ my $INSLOG = "/mnt/drive2/emr_scan_load.log";
 #
 my $INPATH = "/mnt/drive2/scan_docs";
 
-# Base directory for OpenEMR documents:
+# Base directory for HMS documents:
 #
 # my $OUTPATH = "/usr/local/apache2/htdocs/openemr/documents";
 my $OUTPATH = "/mnt/drive2/documents";

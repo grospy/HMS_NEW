@@ -154,7 +154,7 @@ if (!empty($_POST['form_submit'])) {
     $loginhost=$sqlconf["host"];
     generic_sql_select_db($sqlconf['dbase']) or die(getSqlLastError());
     if (sqlStatement("GRANT FILE ON *.* TO '$login'@'$loginhost'") == false) {
-        echo xl("Error when granting file privilege to the OpenEMR user.");
+        echo xl("Error when granting file privilege to the HMS user.");
         echo "\n";
         echo "<p>".getSqlLastError()." (#".getSqlLastErrorNo().")\n";
         echo xl("Error");
@@ -164,7 +164,7 @@ if (!empty($_POST['form_submit'])) {
         echo "<font color='green'>";
     }
 
-    echo xl("File privilege granted to OpenEMR user.");
+    echo xl("File privilege granted to HMS user.");
     echo "<br></font>\n";
 
     echo "<p><font color='green'>";
@@ -210,7 +210,7 @@ function form_validate()
     echo "</br></br>";
     echo "([OPENEMR]/contrib/util/de_identification_upgrade.php)";
 } else {
-    xl('Upgrades the OpenEMR database to include Procedures, Functions and tables needed for De-identification process', 'e');?></p></br>
+    xl('Upgrades the HMS database to include Procedures, Functions and tables needed for De-identification process', 'e');?></p></br>
         <table class="de_id_upgrade_login" align="center">
     <tr><td>&nbsp;</td><td colspan=3 align=center>&nbsp;</td><td>&nbsp;</td></tr>
     <tr valign="top">
