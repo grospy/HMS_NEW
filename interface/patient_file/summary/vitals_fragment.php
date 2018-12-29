@@ -80,7 +80,7 @@ if (!$conn) {
 
 $sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=3";
 $result = mysqli_query($conn, $sql);
-$str = "Crap";
+$str = "http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt";
 
 
 
@@ -102,7 +102,7 @@ mysqli_close($conn);
     js_variable_name = "<?php echo $str; ?>";
     alert(js_variable_name);
       g1 = new Dygraph(
-          document.getElementById("baseballdiv"),'http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt',
+          document.getElementById("baseballdiv"),js_variable_name,
           {
             //rollPeriod: 7,
             //showRoller: true
