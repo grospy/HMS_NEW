@@ -65,7 +65,42 @@ require_once("../../globals.php");
     <div id="baseballdiv" style="width:600px; height:320px;"></div>
    
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "openemr";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=3";
+$result = mysqli_query($conn, $sql);
+$str = "Crap";
+
+
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$readingResults = mysql_query($sql);
+
+mysqli_close($conn);
+?>
+
+
     <script type="text/javascript" language= ”JavaScript”>
+    js_variable_name = "<?php echo $str; ?>";
+    alert(js_variable_name);
       g1 = new Dygraph(
           document.getElementById("baseballdiv"),'http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt',
           {
@@ -108,14 +143,6 @@ require_once("../../globals.php");
     }*/
       
     </script>
-  
-
-    
-
-        
-
-
-
        <h2> Istifadəçi fayyları ilə əməliyatlar şöbəsi : </h2> 
 
        
