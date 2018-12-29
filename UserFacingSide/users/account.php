@@ -87,8 +87,11 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 		
 		
 		<?php }
-		$newuser = trim($user->data()->fname);
-		echo "$newuser";
+    $newuser = trim($user->data()->fname);
+    $newuser1 = trim($user->data()->lname);
+    echo "$newuser";
+    echo "$newuser1";
+
 		?>
 	</div>
 	<div class="col-xs-12 col-md-9">
@@ -167,7 +170,7 @@ $str = "http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        //echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
         $link = $row['linkToTheMedicalData'];
     }
 } else {
@@ -182,7 +185,7 @@ mysqli_close($conn);
 
     <script type="text/javascript" language= ”JavaScript”>
       js_variable_name = "<?php echo $link; ?>";
-      alert(js_variable_name);
+      //alert(js_variable_name);
 
       g1 = new Dygraph(
           document.getElementById("baseballdiv"),js_variable_name,
@@ -216,6 +219,11 @@ mysqli_close($conn);
     }*/
       
     </script>
+
+   <form action="upload.php" method="post" enctype="multipart/form-data">
+    <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   <input type="file" name="fileToUpload" id="fileToUpload">   <br> <input type="submit" value="Datanı yüklə" name="submit"> <br>   </p>
+ 
+
     &nbsp;   &nbsp;&nbsp; &nbsp; &nbsp;
     &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;
     &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -230,8 +238,8 @@ mysqli_close($conn);
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-	<a href=" http://localhost:8888/HMS/HMSVideoAudio/index.html" style="height:300px;width:800px"> <button> Record audio & video for the doctor </button> </a>
+   
+	<a href=" http://localhost:8888/HMS/HMSVideoAudio/index.html" style="height:300px;width:800px"> <button> Həkim üçün video və səninizi yazın </button> </a>
 	</html>
 
 	    
@@ -242,6 +250,9 @@ mysqli_close($conn);
 </div> <!-- /container -->
 
 </div> <!-- /#page-wrapper -->
+
+
+
 
 <!-- footers -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>
