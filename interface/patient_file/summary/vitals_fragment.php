@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "0 results";
 }
-#$readingResults = mysql_query($sql);
+$readingResults = mysql_query($sql);
 
 mysqli_close($conn);
 ?>
