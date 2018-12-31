@@ -11,6 +11,8 @@
 
 require_once("../../globals.php");
 
+
+
 ?>
 <div id='vitals' style='margin-top: 3px; margin-left: 10px; margin-right: 10px'><!--outer div-->  
 <br>
@@ -75,7 +77,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=3";
+if (isset($_GET['set_pid'])) {
+  include_once("$srcdir/pid.inc");
+  setpid($_GET['set_pid']);
+}
+echo $pid;
+
+$sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=$pid";
 $result = mysqli_query($conn, $sql);
 $str = "Crap";
 
