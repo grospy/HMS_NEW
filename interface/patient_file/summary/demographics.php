@@ -545,13 +545,6 @@ function setMyPatient() {
 if (sqlNumRows($result4)>0) {
     while ($rowresult4 = sqlFetchArray($result4)) {
 ?>
-
-// Here I am planning to insert the patient data as well
-
-
-
-
-
  EncounterIdArray[Count] = '<?php echo addslashes($rowresult4['encounter']); ?>';
  EncounterDateArray[Count] = '<?php echo addslashes(oeFormatShortDate(date("Y-m-d", strtotime($rowresult4['date'])))); ?>';
  CalendarCategoryArray[Count] = '<?php echo addslashes(xl_appt_category($rowresult4['pc_catname'])); ?>';
@@ -560,8 +553,6 @@ if (sqlNumRows($result4)>0) {
     }
 }
 ?>
-
-
  parent.left_nav.setPatientEncounter(EncounterIdArray,EncounterDateArray,CalendarCategoryArray);
 <?php } // end setting new pid ?>
  parent.left_nav.syncRadios();
@@ -588,9 +579,6 @@ $(window).on('load', function() {
 });
 
 </script>
-
-
-
 
 <style type="css/text">
 
@@ -1952,11 +1940,6 @@ var skipArray = [
 ];
 checkSkipConditions();
 </script>
-
-
-
-
-
 
 </body>
 </html>
