@@ -88,6 +88,10 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+<<<<<<< HEAD
+=======
+        $link = $row['linkToTheMedicalData'];
+>>>>>>> parent of 6aea062d... Some files that changed, new file upload + db synchronization added
     }
 } else {
     echo "0 results";
@@ -99,7 +103,11 @@ mysqli_close($conn);
 
 
     <script type="text/javascript" language= ”JavaScript”>
+<<<<<<< HEAD
     js_variable_name = "<?php echo $str; ?>";
+=======
+    js_variable_name = "<?php echo $link; ?>";
+>>>>>>> parent of 6aea062d... Some files that changed, new file upload + db synchronization added
     alert(js_variable_name);
       g1 = new Dygraph(
           document.getElementById("baseballdiv"),'http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt',
