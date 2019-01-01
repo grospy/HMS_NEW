@@ -17,6 +17,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+include '/Applications/MAMP/htdocs/HMS/UserFacingSide/users/upload.php';
+
+
+
 ?>
 <?php require_once '../users/init.php'; ?>
 <?php require_once $abs_us_root.$us_url_root.'users/includes/header.php'; ?>
@@ -37,7 +41,10 @@ if(!empty($_POST['uncloak'])){
 			Redirect::to($us_url_root.'users/logout.php?err=Something+went+wrong.+Please+login+again');
 		}
 }
-
+$newuser = trim($user->data()->fname);
+$newuser1 = trim($user->data()->lname);
+echo "$newuser";
+echo "$newuser1";
 
 
 
@@ -137,14 +144,66 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
  
 </form>
+
+
+
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən sizin kardiqramıdır. (Real Time)</h4>
     <div id="baseballdiv" style="width:600px; height:320px;"></div>
    
 
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "openemr";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=3";
+$result = mysqli_query($conn, $sql);
+$str = "http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt";
+
+
+
+
+
+if (mysqli_num_rows($result) > 0) {
+
+  
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        $link = $row['linkToTheMedicalData'];
+    }
+} else {
+    echo "0 results";
+}
+#$readingResults = mysql_query($sql);
+
+
+mysqli_close($conn);
+
+
+//echo $target_dir;
+//echo $path;
+echo "&nbsp;";
+//echo $target_dir;
+
+echo $finalUploadedFileName;
+?>
+
     <script type="text/javascript" language= ”JavaScript”>
+
+    js_variable_name = "<?php echo $link; ?>";
+      alert(js_variable_name);
       g1 = new Dygraph(
-          document.getElementById("baseballdiv"),'http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt',
+          document.getElementById("baseballdiv"),js_variable_name,
           {
             //rollPeriod: 7,
             //showRoller: true
@@ -175,6 +234,11 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
     }*/
       
     </script>
+
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   <input type="file" name="fileToUpload" id="fileToUpload">   <br> <input type="submit" value="Datanı yüklə" name="submit"> <br>   </p>
+ 
     &nbsp;   &nbsp;&nbsp; &nbsp; &nbsp;
     &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;
     &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
