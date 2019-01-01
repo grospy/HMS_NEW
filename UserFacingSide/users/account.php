@@ -17,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-include '/Applications/MAMP/htdocs/HMS/UserFacingSide/users/upload.php';
+//include '/Applications/MAMP/htdocs/HMS/UserFacingSide/users/upload.php';
 
 
 
@@ -186,12 +186,38 @@ if (mysqli_num_rows($result) > 0) {
 #$readingResults = mysql_query($sql);
 
 echo "User's first name is : $newuser ||||";
-echo " user's last name is : $newuser1";
+echo " user's last name is : $newuser1 |||| TheFileName:  ";
 mysqli_close($conn);
 
 
 $accountName = $_GET['filename'];
 echo $accountName;
+
+if ( $accountName != null) {
+  $servername1 = "localhost";
+  $username1 = "root";
+  $password1 = "root";
+  $dbname1 = "openemr";
+  
+  // Create connection
+  $conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+  // Check connection
+  if (!$conn1) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+  
+  $sql1 = "UPDATE patient_data SET linkToTheMedicalData = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/$accountName' WHERE id=3"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
+  $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
+
+  mysqli_close($conn1);
+
+} else {
+
+  echo "Upload your file first!";
+}
+
+
+
 session_start();
 
 $_SESSION["account_name"] = $newuser;
