@@ -9,7 +9,7 @@ $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 //$LoliVriable = "Tupiloksumotrikabiliya";
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
+$TheFileExtension = basename($_FILES["fileToUpload"]["name"]);
 /*
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -94,6 +94,8 @@ echo "$newuser1"; */
 
 echo "$newuser";
 echo "$newuser1";
+
+echo "<button><a href=account.php?filename=".$TheFileExtension.">Hesaba geri qayıtmaq</a></button>";
 
 //renaming the uploaded file into a new file extension
 rename ("$path/$target_file", "$target_file.loli");

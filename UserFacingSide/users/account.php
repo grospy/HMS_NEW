@@ -185,12 +185,13 @@ if (mysqli_num_rows($result) > 0) {
 }
 #$readingResults = mysql_query($sql);
 
-echo "$newuser";
-echo "$newuser1";
+echo "User's first name is : $newuser ||||";
+echo " user's last name is : $newuser1";
 mysqli_close($conn);
 
 
-
+$accountName = $_GET['filename'];
+echo $accountName;
 session_start();
 
 $_SESSION["account_name"] = $newuser;
@@ -276,8 +277,6 @@ echo $finalUploadedFileName;
 </div> <!-- /container -->
 
 </div> <!-- /#page-wrapper -->
-
-
 
 <!-- footers -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>
