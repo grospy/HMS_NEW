@@ -41,10 +41,9 @@ if(!empty($_POST['uncloak'])){
 			Redirect::to($us_url_root.'users/logout.php?err=Something+went+wrong.+Please+login+again');
 		}
 }
-$newuser = trim($user->data()->fname);
+//$newuser = trim($user->data()->fname);
 $newuser1 = trim($user->data()->lname);
-echo "$newuser";
-echo "$newuser1";
+
 
 
 
@@ -186,9 +185,15 @@ if (mysqli_num_rows($result) > 0) {
 }
 #$readingResults = mysql_query($sql);
 
-
+echo "$newuser";
+echo "$newuser1";
 mysqli_close($conn);
 
+
+
+session_start();
+
+$_SESSION["account_name"] = $newuser;
 
 //echo $target_dir;
 //echo $path;
@@ -237,7 +242,13 @@ echo $finalUploadedFileName;
 
 
     <form action="upload.php" method="post" enctype="multipart/form-data">
-    <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   <input type="file" name="fileToUpload" id="fileToUpload">   <br> <input type="submit" value="Datanı yüklə" name="submit"> <br>   </p>
+    <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   
+    <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
+    <input type="submit" value="Datanı yüklə" name="submit"> <br>
+
+    
+   
+       </p>
  
     &nbsp;   &nbsp;&nbsp; &nbsp; &nbsp;
     &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;
@@ -265,6 +276,8 @@ echo $finalUploadedFileName;
 </div> <!-- /container -->
 
 </div> <!-- /#page-wrapper -->
+
+
 
 <!-- footers -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>

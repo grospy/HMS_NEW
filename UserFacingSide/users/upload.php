@@ -1,4 +1,9 @@
 <?php
+
+//include '/Applications/MAMP/htdocs/HMS/UserFacingSide/users/account.php';
+
+echo $_SESSION["account_name"];
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -42,6 +47,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        $finalUploadedFileName =  basename($_FILES["fileToUpload"]["name"]);
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
@@ -67,8 +73,30 @@ if ($res === TRUE) {
   echo "Sistem faylınızı $target_file aça bilmədi";
 }
 
-$finalUploadedFileName = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+
+
+/*
+$newuser = trim($user->data()->fname);
+$newuser1 = trim($user->data()->lname);
+echo "$newuser";
+echo "$newuser1"; */
+
+// Here in this file I can read the user's details from another file, 
+// and then file the query from here automatically so that my user won't bother with the 
+// uploading procedure. That is if I can. So what is ought to be done here is:
+    // 1. Create the database connection
+    // 2. Read the user's details from the previous file  /Applications/MAMP/htdocs/HMS/UserFacingSide/users/account.php
+    // 3. Then fire the query into the DB which is supposed to store the path to the new file. Since we're going
+    //  to store all user uploaded files in a static directry, then we can add that direcory as a default here,
+    //  and then add the filename( that is stored in $target_file variable ).
+
+
+echo "$newuser";
+echo "$newuser1";
 
 //renaming the uploaded file into a new file extension
 rename ("$path/$target_file", "$target_file.loli");
 ?>
+
+
