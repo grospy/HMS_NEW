@@ -1,22 +1,5 @@
 <?php
-/*
-UserSpice 4
-An Open Source PHP User Management System
-by the UserSpice Team at http://UserSpice.com
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 //include '/Applications/MAMP/htdocs/HMS/UserFacingSide/users/upload.php';
 
 
@@ -139,8 +122,9 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
     }
     </style>
   </head>
+  
   <body>
-
+  
  
 </form>
 
@@ -149,7 +133,7 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən sizin kardiqramıdır. (Real Time)</h4>
     <div id="baseballdiv" style="width:600px; height:320px;"></div>
-   
+    
 
     <?php
 $servername = "localhost";
@@ -216,6 +200,7 @@ if ( $accountName != null) {
   echo "Upload your file first!";
 }
 
+$linkToVideo = 
 
 
 session_start();
@@ -267,7 +252,13 @@ echo $finalUploadedFileName;
       
     </script>
 
+<video width="640" height="320" controls>
+ <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
+    <source src="http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
+    <a href="http://localhost:8888/HMS/HMSVideoAudio/index.html" style="height:300px;width:800px" id ="3"> <button> Record audio & video for the doctor </button>  </a>
     <form action="upload.php" method="post" enctype="multipart/form-data">
     <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
@@ -292,7 +283,7 @@ echo $finalUploadedFileName;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-	<a href=" http://localhost:8888/HMS/HMSVideoAudio/index.html" style="height:300px;width:800px"> <button> Record audio & video for the doctor </button> </a>
+	</a>
 	</html>
 
 	    

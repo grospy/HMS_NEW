@@ -5,13 +5,9 @@
 //echo $path;
 //echo "&nbsp;";
 //echo $target_dir;
-
 //echo $target_file;
 
-
 require_once("../../globals.php");
-
-
 
 ?>
 <div id='vitals' style='margin-top: 3px; margin-left: 10px; margin-right: 10px'><!--outer div-->  
@@ -61,7 +57,7 @@ require_once("../../globals.php");
 </form>
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən pasientin kardiqramıdır. (Real Time)</h4>
-    <div id="baseballdiv" style="width:600px; height:320px;"></div>
+    <div id="baseballdiv" style="width:1600px; height:640px;"></div>
    
 
 <?php

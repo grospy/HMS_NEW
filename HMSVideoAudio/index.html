@@ -123,6 +123,7 @@
                 <select class="media-container-format">
                     <option>default</option>
                     <option>mkv</option>
+                    <option>mp4</option>
                 </select>
 
                 <input type="checkbox" id="chk-timeSlice" style="margin:0;width:auto;" title="Use intervals based recording">
@@ -390,7 +391,7 @@
                 };
 
                 if(mediaContainerFormat.value === 'h264') {
-                    mimeType = 'video/webm\;codecs=h264';
+                    mimeType = 'video/mp4;codecs=avc1';  //mimeType = 'video/webm\;codecs=h264';
                     fileExtension = 'mp4';
 
                     // video/mp4;codecs=avc1
@@ -1373,7 +1374,7 @@
                         return;
                     }
 
-                    var initialURL = 'https://webrtcweb.com/RecordRTC/uploads/';
+                    var initialURL = '/Applications/MAMP/htdocs/HMS/HMSVideoAudio/uploads/';
 
                     callback('ended', initialURL + fileName);
                 });
@@ -1439,7 +1440,7 @@
                 var year = d.getUTCFullYear();
                 var month = d.getUTCMonth();
                 var date = d.getUTCDate();
-                return 'RecordRTC-' + year + month + date + '-' + getRandomString() + '.' + fileExtension;
+                return 'HMSVideoAudio-' + year + month + date + '-' + getRandomString() + '.' + fileExtension;
             }
 
             function SaveFileURLToDisk(fileUrl, fileName) {
@@ -1689,7 +1690,7 @@
         <script>
             /* cors_upload.js Copyright 2015 Google Inc. All Rights Reserved. */
 
-            var DRIVE_UPLOAD_URL = 'https://www.googleapis.com/upload/drive/v2/files/';
+            var DRIVE_UPLOAD_URL = '/Applications/MAMP/htdocs/HMS/HMSVideoAudio/uploads';
 
             var RetryHandler = function() {
               this.interval = 1000; // Start at one second
