@@ -200,7 +200,9 @@ if ( $accountName != null) {
   echo "Upload your file first!";
 }
 
-$linkToVideo = 
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
 
 
 session_start();
@@ -254,7 +256,9 @@ echo $finalUploadedFileName;
 
 <video width="640" height="320" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
-    <source src="http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm" type="video/webm">
+  
+ 
+ <source src=<?php echo $linkToVideo; ?> type="video/webm">
   Your browser does not support the video tag.
 </video>
 
