@@ -1,11 +1,5 @@
 <script>window.demoVersion = '2018.06.06';</script>
 
-<!--
-> Muaz Khan     - www.MuazKhan.com
-> MIT License   - www.WebRTC-Experiment.com/licence
-> Documentation - github.com/muaz-khan/RecordRTC
-> and           - RecordRTC.org
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1270,6 +1264,21 @@
                     window.open(URL.createObjectURL(file));
                 };
 
+                function saveUserTimes() {
+                   $.post("savesettings.php",
+            {
+                // Here I need to declare the only variable that points me to the path of the video that was uploade to the server
+                linkToVideo: fileURL,
+   
+            },
+            function(data,status){
+                document.getElementById("saveWarningText").innerHTML = data;
+                $( "#saveWarningText" ).fadeIn(100);
+                setTimeout(function(){ $( "#saveWarningText" ).fadeOut(100); }, 3000);
+            });
+            }
+            
+
                 // upload to PHP server
                 document.querySelector('#upload-to-php').disabled = false;
                 document.querySelector('#upload-to-php').onclick = function() {
@@ -1289,12 +1298,15 @@
 
                             var html = 'Uploaded to PHP.<br>Download using below link:<br>';
                             html += '<a href="'+fileURL+'" download="'+fileName+'" style="color: yellow; display: block; margin-top: 15px;">'+fileName+'</a>';
+                             
                             recordingPlayer.parentNode.parentNode.querySelector('h2').innerHTML = html;
                             return;
                         }
                         button.innerHTML = progress;
                         recordingPlayer.parentNode.parentNode.querySelector('h2').innerHTML = progress;
+                    
                     });
+                    
                 };
 
                 // upload to YouTube!
@@ -1352,6 +1364,9 @@
                     });
                 };
             }
+
+
+           
 
             function uploadToPHPServer(fileName, recordRTC, callback) {
                 var blob = recordRTC instanceof Blob ? recordRTC : recordRTC.getBlob();
@@ -1541,7 +1556,49 @@
 
                 parentNode.appendChild(recordingPlayer);
             }
+        
         </script>
+  <?php $URLOFFILE = "https://webrtcweb.com/RecordRTC/uploads/RecordRTC-2019014-1uz1a9tp0up.webm";?>
+<?php echo $URLOFFILE;?>
+<?php
+$servername1 = "localhost";
+$username1 = "root";
+$password1 = "root";
+$dbname1 = "openemr";
+
+// Create connection
+$conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+// Check connection
+if (!$conn1) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_GET['set_pid'])) {
+  include_once("$srcdir/pid.inc");
+  setpid($_GET['set_pid']);
+}
+//echo $pid;
+
+$sql1 = "UPDATE patient_data SET linkToVideoMessage = '$URLOFFILE' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'";
+$result1 = mysqli_query($conn1, $sql1);
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+//$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
+
+
+if (mysqli_num_rows($result1) > 0) {
+    // output data of each row
+    while($row1 = mysqli_fetch_assoc($result1)) {
+       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        $linkToVideo = $row1['linkToVideoMessage'];
+    }
+} else {
+    echo "0 results";
+}
+//$readingResults = mysql_query($sql);
+
+mysqli_close($conn1);
+?>
 
         <script>
             /* upload_youtube_video.js Copyright 2017 Google Inc. All Rights Reserved. */

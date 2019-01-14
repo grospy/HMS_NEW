@@ -198,7 +198,7 @@ mysqli_close($conn1);
     <h3> Recording a video for the doctor </h3>
 
 </form>
-<a href=" http://localhost:8888/HMS/HMSVideoAudio/index.html"> <button> Record audio & video for the doctor </button> </a>
+<a href=" http://localhost:8888/HMS/HMSVideoAudio/index.php"> <button> Record audio & video for the doctor </button> </a>
 
   </body>
 </html>

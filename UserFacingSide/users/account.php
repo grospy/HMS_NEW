@@ -390,7 +390,7 @@ mysqli_close($conn1);
   Your browser does not support the video tag.
 </video>
 
-    <a href="http://localhost:8888/HMS/HMSVideoAudio/index.html" style="height:300px;width:800px" id ="3"> <button> Record audio & video for the doctor </button>  </a>
+    <a href="http://localhost:8888/HMS/HMSVideoAudio/index.php" style="height:300px;width:800px" id ="3"> <button> Record audio & video for the doctor </button>  </a>
     <form action="upload.php" method="post" enctype="multipart/form-data">
     <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
