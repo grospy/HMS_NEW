@@ -196,7 +196,6 @@ if ( $accountName != null) {
   mysqli_close($conn1);
 
 } else {
-
   echo "Upload your file first!";
 }
 
@@ -253,6 +252,93 @@ echo $finalUploadedFileName;
     }*/
       
     </script>
+
+
+
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "openemr";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=3";
+$result = mysqli_query($conn, $sql);
+$str = "http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt";
+
+
+
+
+
+if (mysqli_num_rows($result) > 0) {
+
+  
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        $link = $row['linkToTheMedicalData'];
+    }
+} else {
+    echo "0 results";
+}
+#$readingResults = mysql_query($sql);
+
+echo "User's first name is : $newuser ||||";
+echo " user's last name is : $newuser1 |||| TheFileName:  ";
+mysqli_close($conn);
+
+
+$accountName = $_GET['filename'];
+echo $accountName;
+
+if ( $accountName != null) {
+  $servername1 = "localhost";
+  $username1 = "root";
+  $password1 = "root";
+  $dbname1 = "openemr";
+  
+  // Create connection
+  $conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+  // Check connection
+  if (!$conn1) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+  
+  $sql1 = "UPDATE patient_data SET linkToTheMedicalData = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/$accountName' WHERE id=3"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
+  $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
+
+  mysqli_close($conn1);
+
+} else {
+  echo "Upload your file first!";
+}
+
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
+
+
+session_start();
+
+$_SESSION["account_name"] = $newuser;
+
+//echo $target_dir;
+//echo $path;
+echo "&nbsp;";
+//echo $target_dir;
+
+echo $finalUploadedFileName;
+
+
+// IN order to write the location of the new video to the database
+//UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `patient_data`.`pid` = 2;
+?>
 
 <video width="640" height="320" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->

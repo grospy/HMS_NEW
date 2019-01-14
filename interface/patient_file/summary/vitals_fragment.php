@@ -57,7 +57,7 @@ require_once("../../globals.php");
 </form>
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən pasientin kardiqramıdır. (Real Time)</h4>
-    <div id="baseballdiv" style="width:1600px; height:640px;"></div>
+    <div id="baseballdiv" style="width:800px; height:320px;"></div>
    
 
 <?php
@@ -77,13 +77,11 @@ if (isset($_GET['set_pid'])) {
   include_once("$srcdir/pid.inc");
   setpid($_GET['set_pid']);
 }
-echo $pid;
+//echo $pid;
 
 $sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE id=$pid";
 $result = mysqli_query($conn, $sql);
 $str = "Crap";
-
-
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -99,6 +97,45 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
 
+<?php
+$servername1 = "localhost";
+$username1 = "root";
+$password1 = "root";
+$dbname1 = "openemr";
+
+// Create connection
+$conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+// Check connection
+if (!$conn1) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_GET['set_pid'])) {
+  include_once("$srcdir/pid.inc");
+  setpid($_GET['set_pid']);
+}
+//echo $pid;
+
+$sql1 = "SELECT linkToVideoMessage FROM `patient_data` WHERE id=$pid";
+$result1 = mysqli_query($conn1, $sql1);
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+//$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
+
+
+if (mysqli_num_rows($result1) > 0) {
+    // output data of each row
+    while($row1 = mysqli_fetch_assoc($result1)) {
+       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        $linkToVideo = $row1['linkToVideoMessage'];
+    }
+} else {
+    echo "0 results";
+}
+//$readingResults = mysql_query($sql);
+
+mysqli_close($conn1);
+?>
 
     <script type="text/javascript" language= ”JavaScript”>
     js_variable_name = "<?php echo $link; ?>";
@@ -143,6 +180,14 @@ mysqli_close($conn);
     }*/
       
     </script>
+<video width="880" height="640" controls>
+ <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
+  
+ 
+ <source src=<?php echo $linkToVideo; ?> type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
        <h2> Istifadəçi fayyları ilə əməliyatlar şöbəsi : </h2> 
 
        
