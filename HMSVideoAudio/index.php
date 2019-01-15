@@ -179,7 +179,7 @@
             <div style="margin-top: 10px;" id="recording-player"></div>
         </section>
 
-        <script>
+        <script type="text/javascript" >
             (function() {
                 var params = {},
                     r = /([^&=]+)=?([^&]*)/g;
@@ -228,7 +228,7 @@
             }
         </script>
 
-        <script>
+        <script type="text/javascript">
             var video = document.createElement('video');
             video.controls = false;
             var mediaElement = getHTMLMediaElement(video, {
@@ -1298,7 +1298,8 @@
 
                             var html = 'Uploaded to PHP.<br>Download using below link:<br>';
                             html += '<a href="'+fileURL+'" download="'+fileName+'" style="color: yellow; display: block; margin-top: 15px;">'+fileName+'</a>';
-                             
+                            
+
                             recordingPlayer.parentNode.parentNode.querySelector('h2').innerHTML = html;
                             return;
                         }
@@ -1558,7 +1559,11 @@
             }
         
         </script>
-  <?php $URLOFFILE = "https://webrtcweb.com/RecordRTC/uploads/RecordRTC-2019014-1uz1a9tp0up.webm";?>
+  <?php 
+     // Here I basically need to read the JavaScript variable and attach it to this PHP variable and then system will take care of the rest
+     echo $variable = $_GET["initialURL"];
+  ?>
+<?php $URLOFFILE = "https://webrtcweb.com/RecordRTC/uploads/$variable";?>
 <?php echo $URLOFFILE;?>
 <?php
 $servername1 = "localhost";
