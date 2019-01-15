@@ -1390,6 +1390,17 @@
                     }
 
                     var initialURL = 'https://webrtcweb.com/RecordRTC/uploads/';
+                    // This is the actual file name that has to be passed into PHP
+                    window.alert(fileName);
+                     /*
+                    $.ajax({
+                          type:"POST",
+                          //url: "your-phpfile.php",
+                          data: "variable1=" + fileName ,
+                          success: function(){
+        //do stuff after the AJAX calls successfully completes
+                           }
+                        }); */
 
                     callback('ended', initialURL + fileName);
                 });
@@ -1559,51 +1570,7 @@
             }
         
         </script>
-  <?php 
-     // Here I basically need to read the JavaScript variable and attach it to this PHP variable and then system will take care of the rest
-     echo $variable = $_GET["initialURL"];
-  ?>
-<?php $URLOFFILE = "https://webrtcweb.com/RecordRTC/uploads/$variable";?>
-<?php echo $URLOFFILE;?>
-<?php
-$servername1 = "localhost";
-$username1 = "root";
-$password1 = "root";
-$dbname1 = "openemr";
-
-// Create connection
-$conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
-// Check connection
-if (!$conn1) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-if (isset($_GET['set_pid'])) {
-  include_once("$srcdir/pid.inc");
-  setpid($_GET['set_pid']);
-}
-//echo $pid;
-
-$sql1 = "UPDATE patient_data SET linkToVideoMessage = '$URLOFFILE' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'";
-$result1 = mysqli_query($conn1, $sql1);
-
-//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
-//$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
-
-
-if (mysqli_num_rows($result1) > 0) {
-    // output data of each row
-    while($row1 = mysqli_fetch_assoc($result1)) {
-       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
-        $linkToVideo = $row1['linkToVideoMessage'];
-    }
-} else {
-    echo "0 results";
-}
-//$readingResults = mysql_query($sql);
-
-mysqli_close($conn1);
-?>
+ 
 
         <script>
             /* upload_youtube_video.js Copyright 2017 Google Inc. All Rights Reserved. */
@@ -1973,7 +1940,68 @@ mysqli_close($conn1);
                     }, 2000);
                 }
             };
+            //This is where I read a variable from JavaScript
+            var crap = 'Crap is the crap and nothing else is more crap than crap';
+            var NewCrap = fileName;
         </script>
+
+<?php
+
+$getValue = "<script>document.write(NewCrap);</script>";
+//while ($getValue = "undefined"){
+//echo $getValue;
+	// echo "JS says " .$_POST['crap']; // Outputs : JS says Hi!
+
+// Here I basically need to read the JavaScript variable and attach it to this PHP variable and then system will take care of the rest
+$initialURL = "<script language='javascript'>document.write(fileName);</script>";
+$URLOFFILE = "https://webrtcweb.com/RecordRTC/uploads/$initialURL";
+//echo $URLOFFILE;
+
+if ($getValue !== 'undefined'){
+    echo $getValue ;
+} 
+
+$servername1 = "localhost";
+$username1 = "root";
+$password1 = "root";
+$dbname1 = "openemr";
+
+// Create connection
+$conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+// Check connection
+if (!$conn1) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_GET['set_pid'])) {
+  include_once("$srcdir/pid.inc");
+  setpid($_GET['set_pid']);
+}
+//echo $pid;
+
+$sql1 = "UPDATE patient_data SET linkToVideoMessage = '$URLOFFILE' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'";
+$result1 = mysqli_query($conn1, $sql1);
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+//$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
+
+
+if (mysqli_num_rows($result1) > 0) {
+    // output data of each row
+    while($row1 = mysqli_fetch_assoc($result1)) {
+       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        $linkToVideo = $row1['linkToVideoMessage'];
+    }
+} else {
+  //  echo "0 results";
+}
+//$readingResults = mysql_query($sql);
+
+mysqli_close($conn1);
+
+//}
+
+?>
 
     
     </article>

@@ -57,7 +57,7 @@ require_once("../../globals.php");
 </form>
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən pasientin kardiqramıdır. (Real Time)</h4>
-    <div id="baseballdiv" style="width:800px; height:320px;"></div>
+    <div id="baseballdiv" style="width:950px; height:440px;"></div>
    
 
 <?php
@@ -178,7 +178,7 @@ mysqli_close($conn1);
       document.getElementById("linear").disabled = !val;
       document.getElementById("log").disabled = val;
     }*/
-      
+
     </script>
 <video width="880" height="640" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
