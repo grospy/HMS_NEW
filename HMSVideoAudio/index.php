@@ -1949,13 +1949,13 @@
 
 $getValue = "<script>document.write(NewCrap);</script>";
 //while ($getValue = "undefined"){
-//echo $getValue;
+echo $getValue;
 	// echo "JS says " .$_POST['crap']; // Outputs : JS says Hi!
 
 // Here I basically need to read the JavaScript variable and attach it to this PHP variable and then system will take care of the rest
-$initialURL = "<script language='javascript'>document.write(fileName);</script>";
-$URLOFFILE = "https://webrtcweb.com/RecordRTC/uploads/$initialURL";
-//echo $URLOFFILE;
+$initialURL = "<script language='javascript'>document.write(NewCrap);</script>";
+$linkToVideo = "https://webrtcweb.com/RecordRTC/uploads/$initialURL";
+echo $linkToVideo;
 
 if ($getValue !== 'undefined'){
     echo $getValue ;
@@ -1977,9 +1977,9 @@ if (isset($_GET['set_pid'])) {
   include_once("$srcdir/pid.inc");
   setpid($_GET['set_pid']);
 }
-//echo $pid;
+echo $pid;
 
-$sql1 = "UPDATE patient_data SET linkToVideoMessage = '$URLOFFILE' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'";
+$sql1 = "UPDATE patient_data SET linkToVideoMessage = '$linkToVideo' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'";
 $result1 = mysqli_query($conn1, $sql1);
 
 //Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
@@ -1993,7 +1993,7 @@ if (mysqli_num_rows($result1) > 0) {
         $linkToVideo = $row1['linkToVideoMessage'];
     }
 } else {
-  //  echo "0 results";
+    echo "0 results";
 }
 //$readingResults = mysql_query($sql);
 
