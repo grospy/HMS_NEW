@@ -2080,7 +2080,7 @@ if ( $accountName != null) {
       die("Connection failed: " . mysqli_connect_error());
   }
   
-  $sql1 = "UPDATE patient_data SET linkToVideoMessage = 'http://localhost:8888/HMS/HMSVideoAudio/uploads/$accountName' WHERE `fname` = '$fnameOfTheUser' AND `lname` = '$lnameOfTheUser'"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
+  $sql1 = "UPDATE patient_data SET linkToVideoMessage = 'http://localhost:8888/HMS/HMSVideoAudio/uploads/$accountName' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
   //UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `fname` = "Dolores" AND `lname` = "Vanguelos";
   $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
 

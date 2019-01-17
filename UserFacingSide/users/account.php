@@ -390,7 +390,7 @@ mysqli_close($conn1);
   Your browser does not support the video tag.
 </video>
 
-    <a href="http://localhost:8888/HMS/HMSVideoAudio/index.php" style="height:300px;width:800px" id ="3"> <button> Record audio & video for the doctor </button>  </a>
+  <!--  <a href="http://localhost:8888/HMS/HMSVideoAudio/index.php" style="height:300px;width:800px" id ="3"> <button> Record audio & video for the doctor </button>  </a> -->
     <?php
      echo "<button><a href=http://localhost:8888/HMS/HMSVideoAudio/index.php?fname=".$newuser.";lname=".$newuser1.">Record audio & video for the doctor</a></button>";
     ?>
