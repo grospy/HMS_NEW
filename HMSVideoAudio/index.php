@@ -1292,8 +1292,9 @@
                             button.innerHTML = 'Click to download from server';
                             button.onclick = function() {
                                 SaveFileURLToDisk(fileURL, fileName);
+                                
                             };
-
+                            
                             setVideoURL(fileURL);
 
                             var html = 'Uploaded to PHP.<br>Download using below link:<br>';
@@ -1386,13 +1387,18 @@
                 makeXMLHttpRequest('https://webrtcweb.com/RecordRTC/', formData, function(progress) {
                     if (progress !== 'upload-ended') {
                         callback(progress);
+                        var ModifiedFileNameReader = fileName;
                         return;
                     }
-
+    
                     var initialURL = 'https://webrtcweb.com/RecordRTC/uploads/';
                     // This is the actual file name that has to be passed into PHP
+                    // This is where I get the message box stating the extension of the file that was just written, but the variable with any value shouldn't actually exist, but the problem is. 
+                    //  The page is being loaded and then video is being played
+                    // Which means, basically the value itself can be attached, but since the page was already loaded its new value is not being displayed.
                     window.alert(fileName);
-                     /*
+                    
+                     /* 
                     $.ajax({
                           type:"POST",
                           //url: "your-phpfile.php",
@@ -1614,7 +1620,7 @@
               this.videoId = '';
               this.uploadStartTime = 0;
             };
-
+             
 
             UploadVideo.prototype.ready = function(accessToken) {
               this.accessToken = accessToken;
@@ -1918,7 +1924,7 @@
                     btnStartRecording.recordRTC.pauseRecording();
                     recordingPlayer.parentNode.parentNode.querySelector('h2').innerHTML = 'Recording status: paused';
                     recordingPlayer.pause();
-
+       
                     btnPauseRecording.style.fontSize = 'inherit';
                     setTimeout(function() {
                         btnPauseRecording.innerHTML = 'Resume Recording';
@@ -1942,29 +1948,38 @@
             };
             //This is where I read a variable from JavaScript
             var crap = 'Crap is the crap and nothing else is more crap than crap';
-            var NewCrap = fileName;
+          //  var NewCrap = fileName;
+            
+            var NewCrap = ModifiedFileNameReader;
         </script>
 
 <?php
-
-$getValue = "<script>document.write(NewCrap);</script>";
-//while ($getValue = "undefined"){
-echo $getValue;
-	// echo "JS says " .$_POST['crap']; // Outputs : JS says Hi!
-
-// Here I basically need to read the JavaScript variable and attach it to this PHP variable and then system will take care of the rest
-$initialURL = "<script language='javascript'>document.write(NewCrap);</script>";
-$linkToVideo = "https://webrtcweb.com/RecordRTC/uploads/$initialURL";
-echo $linkToVideo;
-
-if ($getValue !== 'undefined'){
-    echo $getValue ;
-} 
 
 $servername1 = "localhost";
 $username1 = "root";
 $password1 = "root";
 $dbname1 = "openemr";
+
+/* And this part basically updates the whole page the whole time
+$page = $_SERVER['PHP_SELF'];
+echo '<meta http-equiv="Refresh" content="0;' . $page . '">'; */
+
+//$getValue = "<script>document.write(NewCrap);</script>";
+//while ($getValue = "undefined"){
+//echo $getValue;
+//echo "JS says " .$_POST['crap']; // Outputs : JS says Hi!
+
+// Here I basically need to read the JavaScript variable and attach it to this PHP variable and then system will take care of the rest
+$initialURL = "<script language='javascript'>document.write(NewCrap);</script>";
+$linkToVideo = "https://webrtcweb.com/RecordRTC/uploads/$initialURL";
+echo $linkToVideo;
+echo $initialURL;
+
+if ($initialURL !== 'undefined'){
+  
+}
+
+
 
 // Create connection
 $conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
@@ -1991,6 +2006,7 @@ if (mysqli_num_rows($result1) > 0) {
     while($row1 = mysqli_fetch_assoc($result1)) {
        // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
         $linkToVideo = $row1['linkToVideoMessage'];
+        
     }
 } else {
     echo "0 results";
@@ -2025,7 +2041,13 @@ mysqli_close($conn1);
                 getScreenId(chromeMediaSource, message.data.sourceId);
             }
         });
+
+        
     </script>
 </body>
+
+
+
+
 
 </html>
