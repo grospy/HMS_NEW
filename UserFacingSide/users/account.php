@@ -392,7 +392,7 @@ mysqli_close($conn1);
 
   <!--  <a href="http://localhost:8888/HMS/HMSVideoAudio/index.php" style="height:300px;width:800px" id ="3"> <button> Record audio & video for the doctor </button>  </a> -->
     <?php
-     echo "<button><a href=http://localhost:8888/HMS/HMSVideoAudio/index.php?fname=".$newuser.";lname=".$newuser1.">Record audio & video for the doctor</a></button>";
+     echo "<button><a href=http://localhost:8888/HMS/HMSVideoAudio/index.php?fname=".$newuser."&&lname=".$newuser1.">Record audio & video for the doctor</a></button>";
     ?>
     
     <form action="upload.php" method="post" enctype="multipart/form-data">

@@ -1,9 +1,5 @@
 <?php
-/*
-UserSpice 4
-An Open Source PHP User Management System
-by the UserSpice Team at http://UserSpice.com
-*/
+
 
 ?>
 <?php require_once '../users/init.php'; ?>

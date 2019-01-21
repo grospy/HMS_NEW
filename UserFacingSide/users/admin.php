@@ -1,25 +1,4 @@
 <?php
-/*
-UserSpice 4
-An Open Source PHP User Management System
-by the UserSpice Team at http://UserSpice.com
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-
-
 ini_set('max_execution_time', 1356);
 ini_set('memory_limit','1024M');
 ?>
@@ -592,7 +571,7 @@ $token = Token::generate();
         <strong>Warning!</strong> You are using the default reCaptcha keys. Please change them before going live.
       </div>
     <?php } ?>
-    <h1 class="text-center">UserSpice Dashboard Version <?=$user_spice_ver?></h1>
+    <h1 class="text-center">HMS User Management Dashboard Version <?=$user_spice_ver?></h1>
     <div class="row row-centered">
 
       <a href="<?=$us_url_root?>users/admin_users.php"><div class="col-md-1 col-sm-3 col-xs-6 col-centered">

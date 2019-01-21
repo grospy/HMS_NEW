@@ -87,7 +87,7 @@
     <article>
         <header style="text-align: center;">
             <h1>
-                HMS Video&Audio recording system |
+                HMS Video&Audio recording system
             </h1>
 
             <p style="margin:0;margin-bottom:-30px;margin-top: 15px;">
@@ -1979,8 +1979,6 @@ if ($initialURL !== 'undefined'){
   
 }
 
-
-
 // Create connection
 $conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
 // Check connection
@@ -1999,8 +1997,6 @@ $result1 = mysqli_query($conn1, $sql1);
 
 //Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
 //$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
-
-
 if (mysqli_num_rows($result1) > 0) {
     // output data of each row
     while($row1 = mysqli_fetch_assoc($result1)) {
@@ -2012,14 +2008,9 @@ if (mysqli_num_rows($result1) > 0) {
     echo "";
 }
 //$readingResults = mysql_query($sql);
-
 mysqli_close($conn1);
-
 //}
-
 ?>
-
-
 
 <?php
 $servername = "localhost";
@@ -2037,10 +2028,6 @@ if (!$conn) {
 //$sql = "SELECT linkToTheMedicalData FROM `patient_data` WHERE `fname` = '$newuser' AND `lname` = '$newuser1'";
 //$result = mysqli_query($conn, $sql);
 //$str = "http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt";
-
-
-
-
 
 if (mysqli_num_rows($result) > 0) {
 
@@ -2115,6 +2102,9 @@ echo $finalUploadedFileName;
     <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .webm qəbul edilir): </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
     <input type="submit" value="Datanı yüklə" name="submit"> <br>
+    <?php
+    // echo "<button><a href=http://localhost:8888/HMS/HMSVideoAudio/upload.php?fname=".$fnameOfTheUser."&&lname=".$lnameOfTheUser.">Upload the video for the doctor</a></button>";
+    ?>
 </form>
     
    

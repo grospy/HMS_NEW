@@ -25,7 +25,7 @@ function rrmdir($dir) {
 rrmdir("install");
 ?>
 </p>
-<p align="center">If you made it this far, everything SHOULD be good to go. If you see any errors above, you will want to navigate to the install folder, and delete it manually.  Don't forget to check out UserSpice.com if you need any help. Click the button below to make sure you have the latest updates to your database.</p>
+<p align="center">If you made it this far, everything SHOULD be good to go. If you see any errors above, you will want to navigate to the install folder, and delete it manually.  Don't forget to check out heartguard.com if you need any help. Click the button below to make sure you have the latest updates to your database.</p>
 
 
 <h3 align="center"><a class="button" href="../users/update.php">Update Database and Login!</a></h3>

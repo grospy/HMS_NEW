@@ -143,8 +143,9 @@ mysqli_close($conn1);
       g1 = new Dygraph(
           document.getElementById("baseballdiv"),js_variable_name,
           {
-            //rollPeriod: 7,
-            //showRoller: true
+            rollPeriod: 14,
+            showRoller: true,
+           // customBars: true,
 
            // fractions: true,
            // errorBars: true,
@@ -155,11 +156,14 @@ mysqli_close($conn1);
           title: 'NYC vs. SF',
           showRoller: true,
           rollPeriod: 14,
-          customBars: true,
-          ylabel: 'Temperature (F)',
-         */
-        showRangeSelector: true
-
+          customBars: true,*/
+       //   ylabel: 'Ürək döyüntüsü (F)',
+         
+        showRangeSelector: true,
+        rangeSelectorPlotLineWidth: 1
+           // rollPeriod: 14,
+           // showRoller: true,
+           // customBars: true,
           }
       );
       /*
