@@ -30,30 +30,27 @@ $settings = $settingsQ->first();
                 <label for="email">Email Address*</label>
                 <input  class="form-control" type="text" name="email" id="email" placeholder="Email Address" value="<?php if (!$form_valid && !empty($_POST)){ echo $email;} ?>" required >
 
-<?php
+        <?php
 
                 $character_range = 'Be between '.$settings->min_pw . ' and ' . $settings->max_pw;
                 $character_statement = '<span id="character_range" class="gray_out_text">' . $character_range . ' characters</span>';
 
-if ($settings->req_cap == 1){
+                if ($settings->req_cap == 1){
                 $num_caps = '1'; //Password must have at least 1 capital
                 if($num_caps != 1){
                         $num_caps_s = 's';
                 }
                 $num_caps_statement = '<span id="caps" class="gray_out_text">Have at least ' . $num_caps . ' capital letter </span>';
-}
+                }
 
-if ($settings->req_num == 1){
+                if ($settings->req_num == 1){
                 $num_numbers = '1'; //Password must have at least 1 number
                 if($num_numbers != 1){
                         $num_numbers_s = 's';
                 }
-
                 $num_numbers_statement = '<span id="number" class="gray_out_text">Have at least ' . $num_numbers . ' number</span>';
-}
+                }
                 $password_match_statement = '<span id="password_match" class="gray_out_text">Be typed correctly twice</span>';
-
-
                 //2.) Apply default class to gray out green check icon
                 echo '
                         <style>
@@ -66,7 +63,6 @@ if ($settings->req_num == 1){
                                 }
                         </style>
                 ';
-
                 //3.) Javascript to check to see if user has met conditions on keyup (NOTE: It seems like we shouldn't have to include jquery here because it's already included by UserSpice, but the code doesn't work without it.)
                 echo '
                         <script type="text/javascript">
@@ -120,9 +116,7 @@ if ($settings->req_num == 1){
                         });
                         </script>
                 ';
-
 ?>
-
                 <div style="display: inline-block">
                         <label for="password">Choose a Password* (Between <?=$settings->min_pw?> and <?=$settings->max_pw?> characters)</label>
                         <input  class="form-control" type="password" name="password" id="password" placeholder="Password" required autocomplete="off" aria-describedby="passwordhelp">
@@ -149,41 +143,18 @@ if ($settings->req_num == 1){ ?>
                         <a class="nounderline" id="password_view_control"><span class="glyphicon glyphicon-eye-open"></span> Show Passwords</a>
                 </div>
                 <br><br>
-
                 <?php include($abs_us_root.$us_url_root.'usersc/scripts/additional_join_form_fields.php'); ?>
-
                 <label for="confirm">Registration User Terms and Conditions</label>
                 <textarea id="agreement" name="agreement" rows="5" class="form-control" disabled ><?php require $abs_us_root.$us_url_root.'usersc/includes/user_agreement.php'; ?></textarea>
-
                 <label><input type="checkbox" id="agreement_checkbox" name="agreement_checkbox"> Check box to agree to terms</label>
         </div>
-
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">
-            $(document).ready(function(){
-             $('.button').click(function(){
-                var clickBtnValue = $(this).val();
-                var ajaxurl = '_join.php',
-                   data =  {'action': clickBtnValue};
-                   $.post(ajaxurl, data, function (response) {
-                   // Response div goes here.
-                   alert("action performed successfully");
-        });
-    });
-
-});
-        </script>
 
         <?php if($settings->recaptcha == 1|| $settings->recaptcha == 2){ ?>
         <div class="g-recaptcha" data-sitekey="<?=$settings->recap_public; ?>" data-bind="next_button" data-callback="submitForm"></div>
         <?php } ?>
         <input type="hidden" value="<?=Token::generate();?>" name="csrf">
         <button class="submit btn btn-primary " type="submit" id="next_button" name="Submit"><i class="fa fa-plus-square"></i> Qeydiyyatdan Keç</button>
-        
- 
 </form><br />
-
-
-
  <?php
         $servername1 = "localhost";
         $username1 = "root";
@@ -197,15 +168,13 @@ if ($settings->req_num == 1){ ?>
             die("Connection failed: " . mysqli_connect_error());
         }
       
-      
         $NewUsersName = $_GET["fname"];
         $NewUsersSurname =  $_GET["lname"];
         echo $NewUsersName;
         echo $NewUsersSurname;
         
-        $sql1 = "INSERT INTO `patient_data`(`fname`,`lname`) VALUES ('$NewUsersName','$NewUsersSurname');"; 
+        $sql1 = "INSERT INTO `patient_data`(`fname`,`lname`) VALUES ('Lakimoto','Yoptimausevich');"; 
         $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
-      
         mysqli_close($conn1);
       
       
@@ -223,8 +192,7 @@ if ($settings->req_num == 1){ ?>
       //echo $target_dir;
       
       echo $finalUploadedFileName;
-
-        exit;
+      exit;
 ?>
 
 </div>
