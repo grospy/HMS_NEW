@@ -91,11 +91,16 @@ echo "$newuser1"; */
     //  to store all user uploaded files in a static directry, then we can add that direcory as a default here,
     //  and then add the filename( that is stored in $target_file variable ).
 
+    $fnameOfTheUser =  $_GET['fname'];
+    $lnameOfTheUser = $_GET['lname'];
+    echo $fnameOfTheUser;
+    echo $lnameOfTheUser;
+
 
 echo "$newuser";
 echo "$newuser1";
 
-echo "<button><a href=index.php?filename=".$TheFileExtension.">Hesaba geri qayıtmaq</a></button>";
+echo "<button><a href=index.php?filename=".$TheFileExtension."&&fname=".$fnameOfTheUser."&&lname=".$lnameOfTheUser.">Hesaba geri qayıtmaq</a></button>";
 
 //renaming the uploaded file into a new file extension
 rename ("$path/$target_file", "$target_file.loli");

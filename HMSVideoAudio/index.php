@@ -2067,7 +2067,7 @@ if ( $accountName != null) {
       die("Connection failed: " . mysqli_connect_error());
   }
   
-  $sql1 = "UPDATE patient_data SET linkToVideoMessage = 'http://localhost:8888/HMS/HMSVideoAudio/uploads/$accountName' WHERE `fname` = 'Imran' AND `lname` = 'Baghirov'"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
+  $sql1 = "UPDATE patient_data SET linkToVideoMessage = 'http://localhost:8888/HMS/HMSVideoAudio/uploads/$accountName' WHERE `fname` = '$fnameOfTheUser' AND `lname` = '$lnameOfTheUser'"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
   //UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `fname` = "Dolores" AND `lname` = "Vanguelos";
   $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
 
@@ -2076,7 +2076,6 @@ if ( $accountName != null) {
 } else {
   echo "Upload your file first!";
 }
-
 
 //Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
 //$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
@@ -2098,8 +2097,8 @@ echo $finalUploadedFileName;
 //UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `patient_data`.`pid` = 2;
 ?>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .webm qəbul edilir): </h4>   
+<form action="upload.php?fname=<?php echo $fnameOfTheUser ?>&&lname=<?php echo $lnameOfTheUser ?>" method="post" enctype="multipart/form-data">
+    <p> <h4> Serverə yüklənilməsi üçün videonuzu  seçin (ancaq .webm qəbul edilir): </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
     <input type="submit" value="Datanı yüklə" name="submit"> <br>
     <?php
