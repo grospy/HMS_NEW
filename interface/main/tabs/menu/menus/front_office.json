@@ -339,32 +339,5 @@
       }
     ],
     "requirement": 0
-  },
-  {
-    "label": "Miscellaneous",
-    "menu_id": "misimg",
-    "children": [
-      {
-        "label": "Messages",
-        "menu_id": "msg0",
-        "target": "msg",
-        "url": "/interface/main/messages/messages.php?form_active=1",
-        "children": [],
-        "requirement": 0,
-        "acl_req": [
-          "patients",
-          "notes"
-        ]
-      },
-      {
-        "label": "Patient Education",
-        "menu_id": "ped0",
-        "target": "msc",
-        "url": "/interface/reports/patient_edu_web_lookup.php",
-        "children": [],
-        "requirement": 0
-      }
-    ],
-    "requirement": 0
   }
 ]
