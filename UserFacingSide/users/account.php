@@ -536,6 +536,7 @@ $(document).ready(function(){
         $userLogins =  $user->data()->logins;
         echo $userLogins;
 
+        $newPID = rand(10,1000);
         if($userLogins == 1){
         $servername2 = "localhost";
         $username2 = "root";
@@ -549,7 +550,7 @@ $(document).ready(function(){
             die("Connection failed: " . mysqli_connect_error());
         }
       
-        $sql2 = "INSERT INTO `patient_data`(`fname`,`lname`) VALUES ('$newuser','$newuser1');"; 
+        $sql2 = "INSERT INTO `patient_data`(`fname`,`lname`,`pid`) VALUES ('$newuser','$newuser1','$newPID');"; 
         echo $newuser;
         echo $newuser1;
         $result2 = mysqli_query($conn2, $sql2);
