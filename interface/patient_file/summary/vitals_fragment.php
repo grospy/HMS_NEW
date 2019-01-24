@@ -46,14 +46,6 @@ require_once("../../globals.php");
     </style>
   </head>
   <body>
-
-    <p> .csv datanı buradan yüklə </p>
-    <input type="file" name="fileToUpload" id="fileToUpload">
-
-  <form action="SecondUpload.php" method="post" enctype="multipart/form-data">
-  <input type="file" name="my-file" size="50" maxlength="25"> <br> 
-  <input type="submit" name="upload" value="Upload">
- 
 </form>
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən pasientin kardiqramıdır. (Real Time)</h4>

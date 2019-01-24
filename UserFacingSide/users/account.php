@@ -172,9 +172,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "0 results";
 }
 #$readingResults = mysql_query($sql);
-
+/*
 echo "User's first name is : $newuser ||||";
-echo " user's last name is : $newuser1 |||| TheFileName:  ";
+echo " user's last name is : $newuser1 |||| TheFileName:  "; */
 mysqli_close($conn);
 
 
@@ -200,7 +200,7 @@ if ( $accountName != null) {
   mysqli_close($conn1);
 
 } else {
-  echo "Upload your file first!";
+  // echo "Upload your file first!";
 }
 
 
@@ -292,9 +292,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "0 results";
 }
 #$readingResults = mysql_query($sql);
-
+/*
 echo "User's first name is : $newuser ||||";
-echo " user's last name is : $newuser1 |||| TheFileName:  ";
+echo " user's last name is : $newuser1 |||| TheFileName:  "; */
 mysqli_close($conn);
 
 
@@ -321,7 +321,7 @@ if ( $accountName != null) {
   mysqli_close($conn1);
 
 } else {
-  echo "Upload your file first!";
+ // echo "Upload your file first!";
 }
 
 
@@ -445,7 +445,7 @@ if ( $accountName != null) {
   mysqli_close($conn1);
 
 } else {
-  echo "Upload your file first!";
+  // echo "Upload your file first!";
 }
 
 
@@ -534,9 +534,10 @@ $(document).ready(function(){
        // $newPid = Math.Random();
 
         $userLogins =  $user->data()->logins;
-        echo $userLogins;
+        echo  $userLogins;
 
         $newPID = rand(10,1000);
+        
         if($userLogins == 1){
         $servername2 = "localhost";
         $username2 = "root";
@@ -550,7 +551,7 @@ $(document).ready(function(){
             die("Connection failed: " . mysqli_connect_error());
         }
       
-        $sql2 = "INSERT INTO `patient_data`(`fname`,`lname`,`pid`) VALUES ('$newuser','$newuser1','$newPID');"; 
+        $sql2 = "INSERT INTO `patient_data`(`fname`,`lname`,`pid`,`pubpid`,`id`) VALUES ('$newuser','$newuser1','$newPID','$newPID','$newPID');"; 
         echo $newuser;
         echo $newuser1;
         $result2 = mysqli_query($conn2, $sql2);
@@ -570,7 +571,7 @@ $(document).ready(function(){
       exit;
 
     } else {
-        echo "This is not the first time you've logged in";
+        echo "Login successful!";
     }
 
 ?>
