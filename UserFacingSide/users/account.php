@@ -90,6 +90,10 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 	    <p> Crappy Pasta </p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/GVV06jTYjeY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			<html>
+
+
+
+          
   <head>
     <link rel="stylesheet" href="http://localhost:8888/HMS/dygraphs/dist/dygraph.css">
     <title>Temperatures with Range Selector</title>
@@ -382,6 +386,89 @@ mysqli_close($conn1);
 ?>
 
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "Spice";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT logins FROM `users` WHERE `fname` = '$newuser' AND `lname` = '$newuser1'";
+$result = mysqli_query($conn, $sql);
+
+// Now I need to write the resulting output into a variable.
+
+
+if (mysqli_num_rows($result) > 0) {
+
+  
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+       // echo "linkToTheMedicalData: " . $row["linkToTheMedicalData"]. "<br>";
+        $link = $row['logins'];
+    }
+} else {
+    echo "0 results";
+}
+#$readingResults = mysql_query($sql);
+
+echo $logins;
+mysqli_close($conn);
+
+
+$accountName = $_GET['filename'];
+echo $accountName;
+
+if ( $accountName != null) {
+  $servername1 = "localhost";
+  $username1 = "root";
+  $password1 = "root";
+  $dbname1 = "openemr";
+  
+  // Create connection
+  $conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+  // Check connection
+  if (!$conn1) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+  
+  $sql1 = "UPDATE patient_data SET linkToTheMedicalData = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/$accountName' WHERE `fname` = '$newuser' AND `lname` = '$newuser1'"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
+  //UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `fname` = "Dolores" AND `lname` = "Vanguelos";
+  $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
+
+  mysqli_close($conn1);
+
+} else {
+  echo "Upload your file first!";
+}
+
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+//$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
+
+
+session_start();
+
+$_SESSION["account_name"] = $newuser;
+
+//echo $target_dir;
+//echo $path;
+echo "&nbsp;";
+//echo $target_dir;
+
+echo $finalUploadedFileName;
+
+
+// IN order to write the location of the new video to the database
+//UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `patient_data`.`pid` = 2;
+?>
+
 <video width="640" height="320" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
   
@@ -400,7 +487,7 @@ mysqli_close($conn1);
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
     <input type="submit" value="Datanı yüklə" name="submit"> <br>
 
-    
+   
    
        </p>
  
@@ -420,10 +507,8 @@ mysqli_close($conn1);
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 	</a>
-	</html>
 
-	    
-</div>
+    </div>
 
 </div>
 
@@ -443,3 +528,52 @@ $(document).ready(function(){
 
 
 <?php require_once $abs_us_root.$us_url_root.'users/includes/html_footer.php'; // currently just the closing /body and /html ?>
+
+
+    <?php
+       // $newPid = Math.Random();
+
+        $userLogins =  $user->data()->logins;
+        echo $userLogins;
+
+        if($userLogins == 1){
+        $servername2 = "localhost";
+        $username2 = "root";
+        $password2 = "root";
+        $dbname2 = "openemr";
+        
+        // Create connection
+        $conn2 = mysqli_connect($servername2, $username2, $password2, $dbname2);
+        // Check connection
+        if (!$conn2) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+      
+        $sql2 = "INSERT INTO `patient_data`(`fname`,`lname`) VALUES ('$newuser','$newuser1');"; 
+        echo $newuser;
+        echo $newuser1;
+        $result2 = mysqli_query($conn2, $sql2);
+        mysqli_close($conn2);
+        //Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+      
+        session_start();
+      
+        // $_SESSION["account_name"] = $newuser;
+      
+        //echo $target_dir;
+        //echo $path;
+        echo "&nbsp;";
+        //echo $target_dir;
+      
+        //echo $finalUploadedFileName;
+      exit;
+
+    } else {
+        echo "This is not the first time you've logged in";
+    }
+
+?>
+	</html>
+
+	    
+

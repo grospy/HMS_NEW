@@ -48,7 +48,7 @@ if(isset($user) && $user->isLoggedIn()){
 		 document.getElementById("baseballdiv"),'http://localhost:8888/HMS/interface/patient_file/summary/uploads/suzuki-mariners.txt',
 		 {
 		   //rollPeriod: 7,
-		   //showRoller: true
+		   //showvRoller: true
 
 		  // fractions: true,
 		  // errorBars: true,
