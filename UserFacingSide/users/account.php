@@ -75,9 +75,12 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 		</form><br>
 		
 		
-		<?php }
+        <?php }
+        $userBalance = 50;
 		$newuser = trim($user->data()->fname);
-		echo "$newuser";
+        echo "$newuser";
+        echo "<br />\n";
+        echo "Sizin balansınız: $userBalance AZN";
 		?>
 	</div>
 	<div class="col-xs-12 col-md-9">
@@ -136,7 +139,7 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən sizin kardiqramıdır. (Real Time)</h4>
-    <div id="baseballdiv" style="width:600px; height:320px;"></div>
+    <div id="baseballdiv" style="width:640px; height:420px;"></div>
     
 
     <?php
@@ -179,7 +182,7 @@ mysqli_close($conn);
 
 
 $accountName = $_GET['filename'];
-echo $accountName;
+//echo $accountName;
 
 if ( $accountName != null) {
   $servername1 = "localhost";
@@ -217,7 +220,7 @@ $_SESSION["account_name"] = $newuser;
 echo "&nbsp;";
 //echo $target_dir;
 
-echo $finalUploadedFileName;
+//echo $finalUploadedFileName;
 ?>
 
     <script type="text/javascript" language= ”JavaScript”>
@@ -299,7 +302,7 @@ mysqli_close($conn);
 
 
 $accountName = $_GET['filename'];
-echo $accountName;
+//echo $accountName;
 
 if ( $accountName != null) {
   $servername1 = "localhost";
@@ -338,7 +341,7 @@ $_SESSION["account_name"] = $newuser;
 echo "&nbsp;";
 //echo $target_dir;
 
-echo $finalUploadedFileName;
+//echo $finalUploadedFileName;
 
 
 // IN order to write the location of the new video to the database
@@ -423,7 +426,7 @@ mysqli_close($conn);
 
 
 $accountName = $_GET['filename'];
-echo $accountName;
+//echo $accountName;
 
 if ( $accountName != null) {
   $servername1 = "localhost";
@@ -462,7 +465,7 @@ $_SESSION["account_name"] = $newuser;
 echo "&nbsp;";
 //echo $target_dir;
 
-echo $finalUploadedFileName;
+//echo $finalUploadedFileName;
 
 
 // IN order to write the location of the new video to the database
