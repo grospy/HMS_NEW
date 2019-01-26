@@ -139,25 +139,42 @@ mysqli_close($conn1);
             showRoller: true,
            // customBars: true,
 
-           // fractions: true,
-           // errorBars: true,
-           // showRoller: true,
-           // rollPeriod: 15
+          // fractions: true,
+          // errorBars: true,
+          // showRoller: true,
+          // rollPeriod: 15
 /*
-           legend: 'always',
+          legend: 'always',
           title: 'NYC vs. SF',
           showRoller: true,
           rollPeriod: 14,
           customBars: true,*/
-       //   ylabel: 'Ürək döyüntüsü (F)',
+          //ylabel: 'Ürək döyüntüsü (F)',
          
-        showRangeSelector: true,
-        rangeSelectorPlotLineWidth: 1
+            showRangeSelector: true,
+            rangeSelectorPlotLineWidth: 1,
+            displayAnnotations: true
            // rollPeriod: 14,
            // showRoller: true,
            // customBars: true,
+             // {
+               // labels: [ 'Date', 'Value' ]
+             // }
           }
       );
+
+
+      
+
+      g1.ready(function() {
+  // This is called when data.csv comes back and the chart draws.
+        g1.setAnnotations([{
+           series: "Suzuki",
+           x: "2009/07/12 17:34",
+           shortText: "M",
+           text: "Marker"
+         }]);
+    });
       /*
        <h2>Stock Chart demo</h2>
   <div id="stock_div" style="width: 600px; height: 320px;"></div>
@@ -176,6 +193,9 @@ mysqli_close($conn1);
     }*/
 
     </script>
+
+
+
 <video width="880" height="640" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
   
@@ -195,7 +215,6 @@ mysqli_close($conn1);
 
 </form>
 <a href=" http://localhost:8888/HMS/HMSVideoAudio/index.php"> <button> Record audio & video for the doctor </button> </a>
-
   </body>
 </html>
 
@@ -215,6 +234,8 @@ if (!$result) { //If there are no disclosures recorded
 
 
   </span> 
+
+  
 <?php
 } else {
 ?> 
