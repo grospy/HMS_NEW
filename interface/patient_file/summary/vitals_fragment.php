@@ -173,7 +173,15 @@ mysqli_close($conn1);
            x: "2009/07/12 17:34",
            shortText: "M",
            text: "Marker"
-         }]);
+         },
+         {
+           series: "Suzuki",
+           x: "2009/07/14 00:45",
+           shortText: "L",
+           text: "Large"
+         }
+         ],
+         );
     });
       /*
        <h2>Stock Chart demo</h2>
