@@ -204,6 +204,7 @@ mysqli_close($conn1);
 
 
 
+
 <video width="880" height="640" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
   
@@ -239,8 +240,12 @@ if (!$result) { //If there are no disclosures recorded
   <span class='text'> <?php echo htmlspecialchars(xl("No vitals have been documented."), ENT_NOQUOTES);
 ?>
 
-
-
+<?php
+// This part of my code reads a text file into the screen. No one knows why and how, damnit.
+echo "<pre>"; // Enables display of line feeds
+echo file_get_contents("http://localhost:8888/HMS/UserFacingSide/users/uploads/Katalis_Taukapulos.txt");
+echo "</pre>"; // Terminates pre tag
+?>
   </span> 
 
   
