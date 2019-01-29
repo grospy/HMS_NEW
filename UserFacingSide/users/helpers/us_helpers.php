@@ -8,7 +8,7 @@ $user_agent = $_SERVER['HTTP_USER_AGENT'];
 if(!function_exists('testUS')) {
 	function testUS(){
 		echo "<br>";
-		echo "UserSpice Functions have been properly included";
+		echo "Functions have been properly included";
 		echo "<br>";
 	}
 }

@@ -241,10 +241,11 @@ if (!$result) { //If there are no disclosures recorded
 ?>
 
 <?php
+/*
 // This part of my code reads a text file into the screen. No one knows why and how, damnit.
 echo "<pre>"; // Enables display of line feeds
 echo file_get_contents("http://localhost:8888/HMS/UserFacingSide/users/uploads/Katalis_Taukapulos.txt");
-echo "</pre>"; // Terminates pre tag
+echo "</pre>"; // Terminates pre tag */
 ?>
   </span> 
 
