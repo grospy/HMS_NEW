@@ -2,6 +2,9 @@
 
 //include '/Applications/MAMP/htdocs/HMS/UserFacingSide/users/account.php';
 
+$patientID = $_GET['pid'];
+echo $patientID;
+
 echo $_SESSION["account_name"];
 
 $target_dir = "uploads/";
@@ -107,3 +110,45 @@ rename ("$path/$target_file", "$target_file.loli");
 ?>
 
 
+<?php
+
+// Here it writes the location of the data to the database. And handles the uploads, and therefore it gets written into the db using $patientID variable.
+// Query structure  UPDATE patient_data SET linkToTheMedicalData = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/$target_file' WHERE `pid` = '$patientID';
+
+  $servername1 = "localhost";
+  $username1 = "root";
+  $password1 = "root";
+  $dbname1 = "openemr";
+  
+  // Create connection
+  $conn1 = mysqli_connect($servername1, $username1, $password1, $dbname1);
+  // Check connection
+  if (!$conn1) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+  
+  $sql1 = "UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/HMSVideoAudio/$target_file' WHERE `pid` = '$patientID'"; // UPDATE Users SET weight = 160, desiredWeight = 145 WHERE id = 1;
+  //UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `fname` = "Dolores" AND `lname` = "Vanguelos";
+  $result1 = mysqli_query($conn1, $sql1);                               // INSERT INTO 'TableName' (LinkToTheMedicalData) VALUES ('Variable(LinkToTheFile)','Variable2') WHERE fname = $newuser lname = $newuser1 ; 
+
+  mysqli_close($conn1);
+
+//Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
+//$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
+
+
+session_start();
+
+$_SESSION["account_name"] = $newuser;
+
+//echo $target_dir;
+//echo $path;
+echo "&nbsp;";
+//echo $target_dir;
+
+//echo $finalUploadedFileName;
+
+
+// IN order to write the location of the new video to the database
+//UPDATE `patient_data` SET `linkToVideoMessage` = 'http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019014-fvlfchrvz3q.webm' WHERE `patient_data`.`pid` = 2;
+?>

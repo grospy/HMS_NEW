@@ -2102,7 +2102,7 @@ echo $finalUploadedFileName;
 
 <form action="upload.php?fname=<?php echo $fnameOfTheUser ?>&&lname=<?php echo $lnameOfTheUser ?>" method="post" enctype="multipart/form-data">
     <p> <h4> Serverə yüklənilməsi üçün videonuzu  seçin (ancaq .webm qəbul edilir): </h4>   
-    <p> <h4> Müştəri üsulu </h4>   
+    <h4> --------- > Müştəri üsulu <-------- </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
     <input type="submit" value="Datanı yüklə" name="submit"> <br>
     <?php
@@ -2110,9 +2110,9 @@ echo $finalUploadedFileName;
     ?>
 </form>
 
-<form action="upload.php?fname=<?php echo $fnameOfTheUser ?>&&lname=<?php echo $lnameOfTheUser ?>" method="post" enctype="multipart/form-data">
-    <p> <h4> Serverə yüklənilməsi üçün videonuzu  seçin (ancaq .webm qəbul edilir): </h4>   
-    <p> <h4> Həkim üsulu </h4>   
+<form action="upload.php?pid=<?php echo $patientID?>" method="post" enctype="multipart/form-data">
+    <h4> Serverə yüklənilməsi üçün videonuzu  seçin (ancaq .webm qəbul edilir): </h4>   
+    <h4> --------- > Həkim üsulu <--------  </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
     <input type="submit" value="Datanı yüklə" name="submit"> <br>
     <?php
