@@ -2054,6 +2054,9 @@ $lnameOfTheUser = $_GET['lname'];
 echo $fnameOfTheUser;
 echo $lnameOfTheUser;
 
+$patientID = $_GET['pid'];
+echo $patientID;
+
 if ( $accountName != null) {
   $servername1 = "localhost";
   $username1 = "root";
@@ -2099,6 +2102,17 @@ echo $finalUploadedFileName;
 
 <form action="upload.php?fname=<?php echo $fnameOfTheUser ?>&&lname=<?php echo $lnameOfTheUser ?>" method="post" enctype="multipart/form-data">
     <p> <h4> Serverə yüklənilməsi üçün videonuzu  seçin (ancaq .webm qəbul edilir): </h4>   
+    <p> <h4> Müştəri üsulu </h4>   
+    <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
+    <input type="submit" value="Datanı yüklə" name="submit"> <br>
+    <?php
+    // echo "<button><a href=http://localhost:8888/HMS/HMSVideoAudio/upload.php?fname=".$fnameOfTheUser."&&lname=".$lnameOfTheUser.">Upload the video for the doctor</a></button>";
+    ?>
+</form>
+
+<form action="upload.php?fname=<?php echo $fnameOfTheUser ?>&&lname=<?php echo $lnameOfTheUser ?>" method="post" enctype="multipart/form-data">
+    <p> <h4> Serverə yüklənilməsi üçün videonuzu  seçin (ancaq .webm qəbul edilir): </h4>   
+    <p> <h4> Həkim üsulu </h4>   
     <input type="file" name="fileToUpload" id="fileToUpload">   <br> 
     <input type="submit" value="Datanı yüklə" name="submit"> <br>
     <?php
