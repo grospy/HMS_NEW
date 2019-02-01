@@ -113,8 +113,6 @@ $result1 = mysqli_query($conn1, $sql1);
 
 //Now basically this PHP variable needs to be modified from the database, on both doctor side and the user side and the loaded into both monitors.
 //$linkToVideo = "http://localhost:8888/HMS/UserFacingSide/users/uploads/RecordRTC-2019011-3in8jfofog3.webm";
-
-
 if (mysqli_num_rows($result1) > 0) {
     // output data of each row
     while($row1 = mysqli_fetch_assoc($result1)) {
@@ -125,7 +123,6 @@ if (mysqli_num_rows($result1) > 0) {
     echo "0 results";
 }
 //$readingResults = mysql_query($sql);
-
 mysqli_close($conn1);
 ?>
 
@@ -138,7 +135,6 @@ mysqli_close($conn1);
             rollPeriod: 14,
             showRoller: true,
            // customBars: true,
-
           // fractions: true,
           // errorBars: true,
           // showRoller: true,
@@ -162,9 +158,6 @@ mysqli_close($conn1);
              // }
           }
       );
-
-
-      
 
       g1.ready(function() {
   // This is called when data.csv comes back and the chart draws.
@@ -207,17 +200,11 @@ mysqli_close($conn1);
 
 <video width="880" height="640" controls>
  <!-- <source src="/Users/shamilkarimli/Desktop/RecordRTC-2019011-eekqrmio1qn.mkv" type="video/x-matroska"> -->
-  
- 
  <source src=<?php echo $linkToVideo; ?> type="video/webm">
   Your browser does not support the video tag.
 </video>
-
        <h2> Istifadəçi fayyları ilə əməliyatlar şöbəsi : </h2> 
-
-       
-
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="upload.php?pid=<?php echo $pid ?>" method="post" enctype="multipart/form-data">
   <p> <h4> Serverə yüklənilməsi üçün xəstə datasını seçin (ancaq .txt qəbul edilir): </h4>   <input type="file" name="fileToUpload" id="fileToUpload">   <br> <input type="submit" value="Datanı yüklə" name="submit"> <br>   </p>
     
     <h3> Recording a video for the doctor </h3>
@@ -230,8 +217,6 @@ mysqli_close($conn1);
 
 
 <?php
-
-
 //retrieve most recent set of vitals.
 $result=sqlQuery("SELECT FORM_VITALS.date, FORM_VITALS.id FROM form_vitals AS FORM_VITALS LEFT JOIN forms AS FORMS ON FORM_VITALS.id = FORMS.form_id WHERE FORM_VITALS.pid=? AND FORMS.deleted != '1' ORDER BY FORM_VITALS.date DESC", array($pid));
     
