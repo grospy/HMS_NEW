@@ -3,8 +3,8 @@ ob_start();
 header('X-Frame-Options: SAMEORIGIN');
 
 ?>
-<?php require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'users/includes/user_spice_ver.php'; ?>
+<?php //require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php'; ?>
+<?php //require_once $abs_us_root.$us_url_root.'users/includes/user_spice_ver.php'; ?>
 
 <?php
 //check for a custom page
@@ -124,7 +124,7 @@ else $pageTitle = '';
 	}
 	?>
 
-	<title><?= (($pageTitle != '') ? $pageTitle : ''); ?> <?=$settings->site_name?></title>
+	<title> Heart Guard</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
