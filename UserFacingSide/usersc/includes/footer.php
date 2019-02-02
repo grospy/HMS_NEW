@@ -19,7 +19,7 @@
                 <div class="col-sm-12 text-center">
                         <footer><font color='white'><br>&copy;
                           <?php echo date("Y"); ?>
-                           <?=$settings->copyright; ?></font></footer>
+                          <?php echo "Heart Guard" ?>
                         <br>
                 </div>
         </div>

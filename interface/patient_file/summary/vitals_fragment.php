@@ -49,7 +49,7 @@ require_once("../../globals.php");
 </form>
 &nbsp; &nbsp; &nbsp;
     <h4>Burada göstərilən pasientin kardiqramıdır. (Real Time)</h4>
-    <div id="baseballdiv" style="width:950px; height:440px;"></div>
+    <div id="baseballdiv" style="width:700px; height:440px;"></div>
    
 
 <?php
@@ -134,28 +134,9 @@ mysqli_close($conn1);
           {
             rollPeriod: 14,
             showRoller: true,
-           // customBars: true,
-          // fractions: true,
-          // errorBars: true,
-          // showRoller: true,
-          // rollPeriod: 15
-/*
-          legend: 'always',
-          title: 'NYC vs. SF',
-          showRoller: true,
-          rollPeriod: 14,
-          customBars: true,*/
-          //ylabel: 'Ürək döyüntüsü (F)',
-         
             showRangeSelector: true,
             rangeSelectorPlotLineWidth: 1,
             displayAnnotations: true
-           // rollPeriod: 14,
-           // showRoller: true,
-           // customBars: true,
-             // {
-               // labels: [ 'Date', 'Value' ]
-             // }
           }
       );
 
@@ -172,26 +153,17 @@ mysqli_close($conn1);
            x: "2009/07/14 00:45",
            shortText: "L",
            text: "Large"
+         },
+         {
+           series: "Suzuki",
+           x: "2009/07/16 00:48 ",
+           shortText: "S",
+           text: "Stuffio"
          }
          ],
          );
     });
-      /*
-       <h2>Stock Chart demo</h2>
-  <div id="stock_div" style="width: 600px; height: 320px;"></div>
-
-      g = new Dygraph(document.getElementById("stock_div"),
-        stockData,
-        {
-          customBars: true,
-          logscale: true
-        }); 
-
-    function setLog(val) {
-      g.updateOptions({ logscale: val });
-      document.getElementById("linear").disabled = !val;
-      document.getElementById("log").disabled = val;
-    }*/
+ 
 
     </script>
 
