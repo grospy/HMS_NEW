@@ -70,7 +70,7 @@ if (count($emr_app)) {
 ?>
 <html>
 <head>
-    <title><?php echo text(DEMO) . " " . xlt('Login'); ?></title>
+    <title><?php echo "Heart Guard" . " " . xlt('Login'); ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <?php Header::setupHeader(['jquery-ui', 'jquery-ui-darkness']); ?>
@@ -297,12 +297,6 @@ if (count($emr_app)) {
                     <div class="form-group">
                         <label for="clearPass" class="control-label text-right"><?php echo xlt('Password:'); ?></label>
                         <input type="password" class="form-control" id="clearPass" name="clearPass" placeholder="<?php echo xla('Password:'); ?>">
-                    </div>
-                    <a href="http://localhost:8888/HMS/interface/usergroup/usergroup_admin_add.php">
-
-                    
-                    <div>
-                     <H3> Qeydiyyatdan keç </H3>
                     </div>
                      </a>
                     <?php echo $div_app ?>

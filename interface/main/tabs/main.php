@@ -11,7 +11,7 @@ $esignApi = new Api();
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<title><?php echo text(DEMO); ?></title>
+<title><?php echo "Heart Guard"; ?></title>
 
 <script type="text/javascript">
 <?php require($GLOBALS['srcdir'] . "/restoreSession.php"); ?>
@@ -179,7 +179,7 @@ if (isset($_SESSION['app1'])) {
 <div id="mainBox" <?php echo $disp_mainBox ?>>
     <div id="dialogDiv"></div>
     <div class="body_top">
-        <a href="http://www.shamilkarimli.tk" title="HMS <?php echo xla("Website"); ?>" target="_blank"><img class="logo" alt="HMS small logo"  border="0" src="<?php echo $GLOBALS['images_static_relative']; ?>/menu-logo.png"></a>
+        <a href="http://www.shamilkarimli.tk" title="Heart Guard <?php echo xla("Website"); ?>" target="_blank"><img class="logo" alt="HMS small logo"  border="0" src="<?php echo $GLOBALS['images_static_relative']; ?>/menu-logo.png"></a>
         <span id="menu logo" data-bind="template: {name: 'menu-template', data: application_data} "></span>
         <span id="userData" data-bind="template: {name: 'user-data-template', data:application_data} "></span>
     </div>

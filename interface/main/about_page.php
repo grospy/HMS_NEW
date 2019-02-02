@@ -12,7 +12,7 @@ use OpenEMR\Services\VersionService;
 <head>
 
     <?php Header::setupHeader(["jquery-ui","jquery-ui-darkness"]); ?>
-    <title><?php echo xl("About");?> We@r3d3vs</title>
+    <title><?php echo xl("About");?> Heart Guard</title>
     <style>
         .donations-needed {
             margin-top: 25px;
@@ -107,7 +107,7 @@ $version = $versionService->fetch();
 
                 <a href="http://www.shamilkarimli.tk" target="_blank" class="btn btn-default btn-block"><i class="fa fa-fw fa-info-circle"></i><?php echo xlt('Acknowledgments, Licensing and Certification'); ?></a>
                 <div class="donations-needed">
-                    <span class="text"><?php echo xlt("We have developed this system with care"); ?> OurCompanyLogoHere:</span><br>
+                    <span class="text"><?php echo xlt("Biz bu sistemi qayğı ilə sizin dünyanı daha sağlam etməniz üçün hazırlamışıq,"); ?> Heart Guard company:</span><br>
                     <a href="http://www.shamilkarimli.tk" target="_blank" class="btn btn-lg btn-block"><i class="fa fa-2x fa-heart"></i><br/><?php echo xlt("DONATE NOW!"); ?></a>
                 </div>
             </div>
