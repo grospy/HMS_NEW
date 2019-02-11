@@ -132,7 +132,7 @@ mysqli_close($conn1);
       g1 = new Dygraph(
           document.getElementById("baseballdiv"),js_variable_name,
           {
-            rollPeriod: 14,
+            rollPeriod: 1,
             showRoller: true,
             showRangeSelector: true,
             rangeSelectorPlotLineWidth: 1,
@@ -144,21 +144,30 @@ mysqli_close($conn1);
   // This is called when data.csv comes back and the chart draws.
         g1.setAnnotations([{
            series: "Suzuki",
-           x: "2009/07/12 17:34",
+           x: "2009/07/15 00:47",
            shortText: "M",
-           text: "Marker"
+           text: "Marker",
+           tickHeight: 0,
+           width: 18,
+           height: 18
          },
          {
            series: "Suzuki",
-           x: "2009/07/14 00:45",
+           x: "2009/07/12 17:34",
            shortText: "L",
-           text: "Large"
+           text: "Large",
+           tickHeight: 0,
+           width: 18,
+           height: 18
          },
          {
            series: "Suzuki",
-           x: "2009/07/16 00:48 ",
+           x: "2009/07/16 00:48",
            shortText: "S",
-           text: "Stuffio"
+           text: "Stuffio",
+           tickHeight: 0,
+           width: 18,
+           height: 18
          }
          ],
          );

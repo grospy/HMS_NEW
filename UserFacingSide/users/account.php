@@ -227,18 +227,29 @@ echo "&nbsp;";
 
     js_variable_name = "<?php echo $link; ?>";
       alert(js_variable_name);
+
+     // var highlight_start = new Date('2009/07/15 00:47');
+     // var highlight_end = new Date('2009/07/16 00:48');
       g1 = new Dygraph(
           document.getElementById("baseballdiv"),js_variable_name,
           {
-            //rollPeriod: 7,
-            //showRoller: true
+            rollPeriod: 1,
+            showRoller: true,
+            showRangeSelector: true,
+            rangeSelectorPlotLineWidth: 1,
+            displayAnnotations: true
+            /*
+            labels: ['X', 'Est.', 'Actual'],
+            animatedZooms: true,
+            underlayCallback: function(canvas, area, g) {
+              var bottom_left = g.toDomCoords(highlight_start, -20);
+              var top_right = g.toDomCoords(highlight_end, +20);
 
-           // fractions: true,
-           // errorBars: true,
-           // showRoller: true,
-           // rollPeriod: 15
-           showRangeSelector: true
-         
+              var left = bottom_left[0];
+              var right = top_right[0];
+
+              canvas.fillStyle = "rgba(255, 255, 102, 1.0)";
+              canvas.fillRect(left, area.y, right - left, area.h); */
           }
       );
       /*
@@ -257,6 +268,39 @@ echo "&nbsp;";
       document.getElementById("linear").disabled = !val;
       document.getElementById("log").disabled = val;
     }*/
+
+    g1.ready(function() {
+  // This is called when data.csv comes back and the chart draws.
+        g1.setAnnotations([{
+           series: "Suzuki",
+           x: "2009/07/15 00:47",
+           shortText: "M",
+           text: "Marker",
+           tickHeight: 0,
+           width: 18,
+           height: 18
+         },
+         {
+           series: "Suzuki",
+           x: "2009/07/12 17:34",
+           shortText: "L",
+           text: "Large",
+           tickHeight: 0,
+           width: 18,
+           height: 18
+         },
+         {
+           series: "Suzuki",
+           x: "2009/07/16 00:48",
+           shortText: "S",
+           text: "Stuffio",
+           tickHeight: 0,
+           width: 18,
+           height: 18
+         }
+         ],
+         );
+    });
       
     </script>
 
